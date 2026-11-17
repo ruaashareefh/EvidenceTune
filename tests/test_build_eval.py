@@ -1,5 +1,5 @@
 
-"""Tests for the EvidenceTune evaluation dataset pipeline."""
+"""Tests for EvidenceTune evaluation dataset generation and curation."""
 
 import hashlib
 import json
@@ -11,6 +11,9 @@ from src.data import build_eval
 from src.data.schema import EvidenceExample
 
 
+PINNED_REVISION = "a" * 40
+
+
 # ---------------------------------------------------------
 # Fixtures
 # ---------------------------------------------------------
@@ -20,7 +23,8 @@ def mock_squad_dataset(monkeypatch):
     """Create SQuAD-like records without network access."""
     records = []
 
-    for i in range(24):
+    # Enough articles for original splits AND replacements.
+    for i in range(48):
         title = f"Article_{i}"
         context = f"Project {i} was launched in {2000 + i}."
 
@@ -60,17 +64,92 @@ def mock_squad_dataset(monkeypatch):
     return records
 
 
+@pytest.fixture
+def curation_case(mock_squad_dataset, tmp_path):
+    """Create a verified baseline and approved exclusion config."""
+    baseline_dir = tmp_path / "baseline"
+    output_dir = tmp_path / "curated"
+    exclusions_path = tmp_path / "exclusions.json"
+
+    build_eval.build_dataset(
+        output_dir=baseline_dir,
+        seed=42,
+        per_category=10,
+        revision=PINNED_REVISION,
+    )
+
+    dev = read_jsonl(baseline_dir / "squad_dev.jsonl")
+    test = read_jsonl(baseline_dir / "squad_test.jsonl")
+
+    answerable = [
+        record for record in dev
+        if record["category"] == "answerable"
+    ]
+
+    unanswerable = [
+        record for record in dev
+        if record["category"] == "unanswerable"
+    ]
+
+    # Mirror the actual audit:
+    # 2 answerable + 8 unanswerable exclusions.
+    excluded_records = answerable[:2] + unanswerable[:8]
+
+    excluded_ids = {
+        record["id"] for record in excluded_records
+    }
+
+    challenge_ids = [
+        record["id"] for record in unanswerable[:3]
+    ]
+
+    config = {
+        "version": "1.0",
+        "dataset": "rajpurkar/squad_v2",
+        "source_revision": PINNED_REVISION,
+        "guideline_version": "0.2",
+        "review_status": "project_owner_approved",
+        "independent_double_review": False,
+        "excluded_ids": {
+            record_id: "Synthetic test exclusion"
+            for record_id in sorted(excluded_ids)
+        },
+        "false_premise_challenge_candidates": challenge_ids,
+    }
+
+    exclusions_path.write_text(
+        json.dumps(config, indent=2),
+        encoding="utf-8",
+    )
+
+    return {
+        "baseline_dir": baseline_dir,
+        "output_dir": output_dir,
+        "exclusions_path": exclusions_path,
+        "excluded_ids": excluded_ids,
+        "original_dev": dev,
+        "original_test": test,
+        "config": config,
+    }
+
+
+# ---------------------------------------------------------
+# Helpers
+# ---------------------------------------------------------
+
 def read_jsonl(path):
     """Read generated evaluation records."""
     return [
         json.loads(line)
-        for line in path.read_text(encoding="utf-8").splitlines()
+        for line in path.read_text(
+            encoding="utf-8"
+        ).splitlines()
         if line.strip()
     ]
 
 
 def make_record(record_id, source_id, context="Some evidence."):
-    """Create a valid EvidenceExample for validation tests."""
+    """Create a valid EvidenceExample."""
     return EvidenceExample(
         id=record_id,
         source_id=source_id,
@@ -82,12 +161,41 @@ def make_record(record_id, source_id, context="Some evidence."):
     )
 
 
-# ---------------------------------------------------------
-# Dataset construction
-# ---------------------------------------------------------
+def sha256(path):
+    """Calculate a file's SHA-256 checksum."""
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def run_curation(case, **overrides):
+    """Build a curated dataset using the test fixture."""
+    options = {
+        "output_dir": case["output_dir"],
+        "baseline_dir": case["baseline_dir"],
+        "exclusions_path": case["exclusions_path"],
+        "seed": 42,
+        "per_category": 10,
+        "revision": PINNED_REVISION,
+    }
+
+    options.update(overrides)
+
+    return build_eval.build_curated_dataset(**options)
+
+
+def save_exclusion_config(case, config):
+    """Write a modified exclusion configuration."""
+    case["exclusions_path"].write_text(
+        json.dumps(config, indent=2),
+        encoding="utf-8",
+    )
+
+
+# =========================================================
+# PART 1: ORIGINAL DATASET BUILDER
+# =========================================================
 
 def test_balanced_dataset(mock_squad_dataset, tmp_path):
-    """Both splits must contain 10 examples per category."""
+    """Both splits contain 10 examples per category."""
     build_eval.build_dataset(
         output_dir=tmp_path,
         seed=42,
@@ -110,7 +218,7 @@ def test_balanced_dataset(mock_squad_dataset, tmp_path):
 
 
 def test_source_disjoint_splits(mock_squad_dataset, tmp_path):
-    """Development and test splits must not share source IDs."""
+    """Development and test splits cannot share sources."""
     build_eval.build_dataset(tmp_path, seed=42)
 
     dev = read_jsonl(tmp_path / "squad_dev.jsonl")
@@ -126,7 +234,7 @@ def test_source_disjoint_splits(mock_squad_dataset, tmp_path):
 
 
 def test_reproducible_outputs(mock_squad_dataset, tmp_path):
-    """Same seed and inputs must produce identical files."""
+    """Same seed and inputs produce identical files."""
     output_a = tmp_path / "run_a"
     output_b = tmp_path / "run_b"
 
@@ -156,7 +264,7 @@ def test_reproducible_outputs(mock_squad_dataset, tmp_path):
 
 
 def test_manifest_checksums(mock_squad_dataset, tmp_path):
-    """Manifest checksums must match actual file contents."""
+    """Manifest checksums must match actual files."""
     manifest = build_eval.build_dataset(
         tmp_path,
         seed=42,
@@ -170,20 +278,15 @@ def test_manifest_checksums(mock_squad_dataset, tmp_path):
     for name in ("dev", "test"):
         path = tmp_path / f"squad_{name}.jsonl"
 
-        actual_hash = hashlib.sha256(
-            path.read_bytes()
-        ).hexdigest()
-
-        assert manifest["splits"][name]["sha256"] == actual_hash
+        assert manifest["splits"][name]["sha256"] == sha256(path)
         assert manifest["splits"][name]["count"] == 20
 
 
 # ---------------------------------------------------------
-# Data integrity
+# Original data integrity tests
 # ---------------------------------------------------------
 
 def test_duplicate_ids_rejected():
-    """Duplicate record IDs must raise an error."""
     dev = [make_record("001", "source_a")]
     test = [make_record("001", "source_b")]
 
@@ -192,7 +295,6 @@ def test_duplicate_ids_rejected():
 
 
 def test_source_leakage_rejected():
-    """Overlapping source IDs must raise an error."""
     dev = [make_record("001", "shared_source")]
     test = [make_record("002", "shared_source")]
 
@@ -201,7 +303,6 @@ def test_source_leakage_rejected():
 
 
 def test_duplicate_contexts_rejected():
-    """Identical contexts must not cross splits."""
     dev = [make_record("001", "source_a", "Same context")]
     test = [make_record("002", "source_b", "Same context")]
 
@@ -210,11 +311,10 @@ def test_duplicate_contexts_rejected():
 
 
 # ---------------------------------------------------------
-# Failure handling
+# Original failure handling
 # ---------------------------------------------------------
 
 def test_existing_outputs_protected(mock_squad_dataset, tmp_path):
-    """Existing evaluation files must not be overwritten."""
     build_eval.build_dataset(tmp_path)
 
     original = (
@@ -230,7 +330,6 @@ def test_existing_outputs_protected(mock_squad_dataset, tmp_path):
 
 
 def test_explicit_overwrite(mock_squad_dataset, tmp_path):
-    """Overwrite must work when explicitly requested."""
     build_eval.build_dataset(tmp_path, seed=42)
 
     manifest = build_eval.build_dataset(
@@ -246,9 +345,9 @@ def test_explicit_overwrite(mock_squad_dataset, tmp_path):
 def test_invalid_sample_size(
     mock_squad_dataset, tmp_path, per_category
 ):
-    """Requested category counts must be positive."""
     with pytest.raises(
-        ValueError, match="per_category must be positive"
+        ValueError,
+        match="per_category must be positive",
     ):
         build_eval.build_dataset(
             tmp_path,
@@ -259,7 +358,6 @@ def test_invalid_sample_size(
 def test_insufficient_source_groups(
     mock_squad_dataset, monkeypatch, tmp_path
 ):
-    """Reject datasets without enough groups for both splits."""
     small_dataset = mock_squad_dataset[:4]
 
     monkeypatch.setattr(
@@ -268,10 +366,464 @@ def test_insufficient_source_groups(
         lambda *args, **kwargs: small_dataset,
     )
 
-    with pytest.raises(
-        ValueError, match="Insufficient examples"
-    ):
+    with pytest.raises(ValueError, match="Insufficient examples"):
         build_eval.build_dataset(
             tmp_path,
             per_category=3,
         )
+
+
+# =========================================================
+# PART 2: CURATED DATASET BUILDER
+# =========================================================
+
+def test_curated_retains_approved_examples(curation_case):
+    """Every accepted development record remains unchanged."""
+    case = curation_case
+
+    manifest = run_curation(case)
+
+    curated = read_jsonl(
+        case["output_dir"] / "squad_dev.jsonl"
+    )
+
+    original = case["original_dev"]
+    excluded = case["excluded_ids"]
+
+    accepted = {
+        record["id"]: record
+        for record in original
+        if record["id"] not in excluded
+    }
+
+    curated_by_id = {
+        record["id"]: record
+        for record in curated
+    }
+
+    assert len(accepted) == 10
+
+    for record_id, original_record in accepted.items():
+        assert record_id in curated_by_id
+        assert curated_by_id[record_id] == original_record
+
+    assert set(accepted).issubset(curated_by_id)
+
+    assert manifest["curation"]["retained_dev_count"] == 10
+
+
+def test_curated_exclusions_and_balance(curation_case):
+    """Excluded IDs never reappear; category balance is restored."""
+    case = curation_case
+
+    manifest = run_curation(case)
+
+    curated = read_jsonl(
+        case["output_dir"] / "squad_dev.jsonl"
+    )
+
+    original_ids = {
+        record["id"]
+        for record in case["original_dev"]
+    }
+
+    curated_ids = {
+        record["id"]
+        for record in curated
+    }
+
+    excluded = case["excluded_ids"]
+
+    assert curated_ids.isdisjoint(excluded)
+
+    counts = Counter(
+        record["category"] for record in curated
+    )
+
+    assert len(curated) == 20
+    assert counts["answerable"] == 10
+    assert counts["unanswerable"] == 10
+
+    replacement_ids = curated_ids - original_ids
+
+    assert len(replacement_ids) == 10
+    assert len(curated_ids) == len(curated)
+
+    assert set(
+        manifest["curation"]["replacement_ids"]
+    ) == replacement_ids
+
+    assert manifest["curation"]["replacement_count"] == 10
+
+
+def test_curated_preserves_heldout_test(curation_case):
+    """Held-out test bytes and checksums remain unchanged."""
+    case = curation_case
+
+    baseline = case["baseline_dir"]
+    curated = case["output_dir"]
+
+    original_test_bytes = (
+        baseline / "squad_test.jsonl"
+    ).read_bytes()
+
+    original_dev_bytes = (
+        baseline / "squad_dev.jsonl"
+    ).read_bytes()
+
+    original_manifest_bytes = (
+        baseline / "squad_manifest.json"
+    ).read_bytes()
+
+    manifest = run_curation(case)
+
+    assert (
+        curated / "squad_test.jsonl"
+    ).read_bytes() == original_test_bytes
+
+    assert (
+        baseline / "squad_test.jsonl"
+    ).read_bytes() == original_test_bytes
+
+    assert (
+        baseline / "squad_dev.jsonl"
+    ).read_bytes() == original_dev_bytes
+
+    assert (
+        baseline / "squad_manifest.json"
+    ).read_bytes() == original_manifest_bytes
+
+    assert (
+        manifest["splits"]["test"]["sha256"]
+        == sha256(baseline / "squad_test.jsonl")
+    )
+
+    assert manifest["curation"]["test_preserved_byte_for_byte"]
+
+
+def test_curated_source_isolation(curation_case):
+    """Curated development sources must not overlap test sources."""
+    case = curation_case
+
+    run_curation(case)
+
+    dev = read_jsonl(
+        case["output_dir"] / "squad_dev.jsonl"
+    )
+
+    test = read_jsonl(
+        case["output_dir"] / "squad_test.jsonl"
+    )
+
+    dev_sources = {
+        record["source_id"] for record in dev
+    }
+
+    test_sources = {
+        record["source_id"] for record in test
+    }
+
+    assert dev_sources.isdisjoint(test_sources)
+
+    dev_contexts = {
+        record["context"] for record in dev
+    }
+
+    test_contexts = {
+        record["context"] for record in test
+    }
+
+    assert dev_contexts.isdisjoint(test_contexts)
+
+
+def test_curated_reproducibility(curation_case, tmp_path):
+    """Identical inputs generate identical curated artifacts."""
+    case = curation_case
+
+    output_a = tmp_path / "curated_a"
+    output_b = tmp_path / "curated_b"
+
+    manifest_a = run_curation(
+        case,
+        output_dir=output_a,
+    )
+
+    manifest_b = run_curation(
+        case,
+        output_dir=output_b,
+    )
+
+    assert manifest_a == manifest_b
+
+    for filename in (
+        "squad_dev.jsonl",
+        "squad_test.jsonl",
+        "squad_manifest.json",
+    ):
+        assert (
+            (output_a / filename).read_bytes()
+            == (output_b / filename).read_bytes()
+        )
+
+
+def test_curated_manifest_provenance(curation_case):
+    """Manifest records all relevant curation provenance."""
+    case = curation_case
+
+    manifest = run_curation(case)
+
+    curated = case["output_dir"]
+    baseline = case["baseline_dir"]
+
+    curation = manifest["curation"]
+
+    assert manifest["source_revision"] == PINNED_REVISION
+
+    assert curation["status"] == (
+        "replacement_candidates_pending_review"
+    )
+
+    assert curation["guideline_version"] == "0.2"
+
+    assert curation["excluded_count"] == 10
+    assert curation["retained_dev_count"] == 10
+    assert curation["replacement_count"] == 10
+
+    assert curation["exclusion_file_sha256"] == sha256(
+        case["exclusions_path"]
+    )
+
+    assert curation["baseline_manifest_sha256"] == sha256(
+        baseline / "squad_manifest.json"
+    )
+
+    assert manifest["splits"]["dev"]["sha256"] == sha256(
+        curated / "squad_dev.jsonl"
+    )
+
+    assert manifest["splits"]["test"]["sha256"] == sha256(
+        curated / "squad_test.jsonl"
+    )
+
+    assert manifest["splits"]["dev"]["review_status"] == (
+        "pending_replacement_audit"
+    )
+
+
+# ---------------------------------------------------------
+# Curated output protection
+# ---------------------------------------------------------
+
+def test_curated_outputs_cannot_be_overwritten(curation_case):
+    """Existing curated outputs cannot be silently replaced."""
+    case = curation_case
+
+    run_curation(case)
+
+    original_bytes = (
+        case["output_dir"] / "squad_dev.jsonl"
+    ).read_bytes()
+
+    with pytest.raises(FileExistsError):
+        run_curation(case)
+
+    assert (
+        case["output_dir"] / "squad_dev.jsonl"
+    ).read_bytes() == original_bytes
+
+
+def test_curated_cannot_overwrite_baseline(curation_case):
+    """Curated and baseline directories must differ."""
+    case = curation_case
+
+    with pytest.raises(
+        ValueError,
+        match="must differ from baseline",
+    ):
+        run_curation(
+            case,
+            output_dir=case["baseline_dir"],
+        )
+
+
+# ---------------------------------------------------------
+# Baseline integrity checks
+# ---------------------------------------------------------
+
+@pytest.mark.parametrize("split", ["dev", "test"])
+def test_corrupted_baseline_rejected(curation_case, split):
+    """Reject baseline files whose checksums no longer match."""
+    case = curation_case
+
+    path = (
+        case["baseline_dir"] / f"squad_{split}.jsonl"
+    )
+
+    path.write_bytes(
+        path.read_bytes() + b"\n"
+    )
+
+    with pytest.raises(
+        ValueError,
+        match=f"Baseline {split} checksum mismatch",
+    ):
+        run_curation(case)
+
+    assert not (
+        case["output_dir"] / "squad_manifest.json"
+    ).exists()
+
+
+# ---------------------------------------------------------
+# Exclusion configuration validation
+# ---------------------------------------------------------
+
+@pytest.mark.parametrize(
+    "field,bad_value,error",
+    [
+        (
+            "dataset",
+            "wrong/dataset",
+            "Exclusion dataset mismatch",
+        ),
+        (
+            "source_revision",
+            "b" * 40,
+            "Exclusion source revision mismatch",
+        ),
+        (
+            "review_status",
+            "pending",
+            "Exclusions are not project-owner approved",
+        ),
+        (
+            "false_premise_challenge_candidates",
+            ["squad_v2:unknown"],
+            "Challenge candidates must be excluded records",
+        ),
+    ],
+)
+def test_invalid_exclusion_config_rejected(
+    curation_case,
+    field,
+    bad_value,
+    error,
+):
+    """Reject curation files with invalid provenance or status."""
+    case = curation_case
+
+    config = dict(case["config"])
+    config[field] = bad_value
+
+    save_exclusion_config(case, config)
+
+    with pytest.raises(ValueError, match=error):
+        run_curation(case)
+
+
+def test_unknown_exclusion_id_rejected(curation_case):
+    """Excluded IDs must belong to the baseline development set."""
+    case = curation_case
+
+    config = dict(case["config"])
+    excluded = dict(config["excluded_ids"])
+
+    excluded["squad_v2:nonexistent"] = "Invalid record"
+
+    config["excluded_ids"] = excluded
+
+    save_exclusion_config(case, config)
+
+    with pytest.raises(
+        ValueError,
+        match="must belong to the baseline development set",
+    ):
+        run_curation(case)
+
+
+def test_empty_exclusion_list_rejected(curation_case):
+    """An empty exclusion configuration is not a curated build."""
+    case = curation_case
+
+    config = dict(case["config"])
+    config["excluded_ids"] = {}
+    config["false_premise_challenge_candidates"] = []
+
+    save_exclusion_config(case, config)
+
+    with pytest.raises(
+        ValueError,
+        match="Exclusion list is empty",
+    ):
+        run_curation(case)
+
+
+def test_curated_category_target_mismatch_rejected(curation_case):
+    """Curated category targets must match the baseline."""
+    case = curation_case
+
+    with pytest.raises(
+        ValueError,
+        match="category target must match the baseline",
+    ):
+        run_curation(
+            case,
+            per_category=9,
+        )
+
+
+def test_curated_revision_mismatch_rejected(curation_case):
+    """Curated builds cannot silently change the source revision."""
+    case = curation_case
+
+    with pytest.raises(
+        ValueError,
+        match="Requested revision differs",
+    ):
+        run_curation(
+            case,
+            revision="b" * 40,
+        )
+
+
+# ---------------------------------------------------------
+# Replacement availability
+# ---------------------------------------------------------
+
+def test_insufficient_replacements_rejected(
+    curation_case,
+    mock_squad_dataset,
+    monkeypatch,
+):
+    """Fail when no eligible unused replacement records exist."""
+    case = curation_case
+
+    original_ids = {
+        record["id"]
+        for record in (
+            case["original_dev"] + case["original_test"]
+        )
+    }
+
+    # Restrict loader to records already in the baseline.
+    # No unused candidates will be available.
+    limited_records = [
+        row for row in mock_squad_dataset
+        if f"squad_v2:{row['id']}" in original_ids
+    ]
+
+    monkeypatch.setattr(
+        build_eval,
+        "load_dataset",
+        lambda *args, **kwargs: limited_records,
+    )
+
+    with pytest.raises(
+        ValueError,
+        match="Insufficient eligible replacement examples",
+    ):
+        run_curation(case)
+
+    assert not (
+        case["output_dir"] / "squad_manifest.json"
+    ).exists()

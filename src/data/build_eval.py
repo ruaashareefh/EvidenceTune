@@ -1,16 +1,19 @@
 
-"""Build reproducible SQuAD evaluation subsets for EvidenceTune."""
+"""Build reproducible SQuAD evaluation datasets for EvidenceTune."""
 
 import argparse
 import hashlib
 import json
 import random
+import re
+import shutil
 from collections import Counter, defaultdict
 from pathlib import Path
 
 from datasets import load_dataset
 
 from src.data.adapters.squad_v2 import adapt_squad_example
+from src.data.schema import EvidenceExample
 
 
 DATASET_NAME = "rajpurkar/squad_v2"
@@ -18,8 +21,44 @@ SOURCE_SPLIT = "validation"
 CATEGORIES = ("answerable", "unanswerable")
 
 
+# ---------------------------------------------------------
+# Shared utilities
+# ---------------------------------------------------------
+
+def sha256_file(path: Path) -> str:
+    """Calculate the SHA-256 checksum of a file."""
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def read_jsonl(path: Path) -> list[EvidenceExample]:
+    """Read and validate EvidenceExample records from JSONL."""
+    with path.open(encoding="utf-8") as file:
+        return [
+            EvidenceExample.model_validate_json(line)
+            for line in file
+            if line.strip()
+        ]
+
+
+def write_jsonl(path: Path, records) -> str:
+    """Write deterministic JSONL and return its checksum."""
+    lines = [
+        json.dumps(
+            record.model_dump(),
+            ensure_ascii=False,
+            sort_keys=True,
+        )
+        for record in records
+    ]
+
+    contents = "\n".join(lines) + "\n"
+    path.write_text(contents, encoding="utf-8")
+
+    return sha256_file(path)
+
+
 def group_by_article(dataset):
-    """Group records to prevent article-level leakage."""
+    """Group SQuAD records by their source article."""
     groups = defaultdict(list)
 
     for record in dataset:
@@ -28,25 +67,82 @@ def group_by_article(dataset):
     return groups
 
 
+def category_counts(records) -> dict[str, int]:
+    """Return stable category counts."""
+    counts = Counter(record.category for record in records)
+    return {category: counts[category] for category in CATEGORIES}
+
+
+def validate_counts(records, per_category: int):
+    """Ensure the expected category balance."""
+    counts = category_counts(records)
+
+    for category in CATEGORIES:
+        if counts[category] != per_category:
+            raise ValueError(
+                f"Incorrect {category} count: "
+                f"expected {per_category}, got {counts[category]}"
+            )
+
+    if len(records) != per_category * len(CATEGORIES):
+        raise ValueError("Unexpected total record count")
+
+
+def validate_splits(dev, test):
+    """Check record uniqueness and source isolation."""
+    all_records = dev + test
+    ids = [record.id for record in all_records]
+
+    if len(ids) != len(set(ids)):
+        raise ValueError("Duplicate example IDs detected")
+
+    dev_sources = {record.source_id for record in dev}
+    test_sources = {record.source_id for record in test}
+
+    if dev_sources & test_sources:
+        raise ValueError("Source leakage between splits")
+
+    dev_contexts = {record.context for record in dev}
+    test_contexts = {record.context for record in test}
+
+    if dev_contexts & test_contexts:
+        raise ValueError("Duplicate contexts across splits")
+
+
+def check_output_paths(paths: dict, overwrite: bool = False):
+    """Protect existing output files."""
+    if overwrite:
+        return
+
+    existing = [str(path) for path in paths.values() if path.exists()]
+
+    if existing:
+        raise FileExistsError(
+            f"Outputs already exist: {existing}. "
+            "Use --overwrite to regenerate intentionally."
+        )
+
+
+# ---------------------------------------------------------
+# Original deterministic sampling
+# ---------------------------------------------------------
+
 def sample_split(groups, start_index, per_category, rng):
     """
     Select balanced examples from distinct source groups.
 
     Each article contributes at most one example per category.
-    Returns selected records and the next unused group index.
     """
     remaining = {category: per_category for category in CATEGORIES}
     selected = []
     index = start_index
 
     while any(remaining.values()) and index < len(groups):
-        article_records = groups[index]
-        index += 1
-
-        # Stable ordering before randomized selection
         article_records = sorted(
-            article_records, key=lambda row: row["id"]
+            groups[index],
+            key=lambda row: row["id"],
         )
+        index += 1
 
         for category in CATEGORIES:
             if remaining[category] == 0:
@@ -75,47 +171,6 @@ def sample_split(groups, start_index, per_category, rng):
     return selected, index
 
 
-def validate_splits(dev, test):
-    """Check identifiers and source isolation."""
-    all_records = dev + test
-    ids = [record.id for record in all_records]
-
-    if len(ids) != len(set(ids)):
-        raise ValueError("Duplicate example IDs detected")
-
-    dev_sources = {record.source_id for record in dev}
-    test_sources = {record.source_id for record in test}
-
-    if dev_sources & test_sources:
-        raise ValueError("Source leakage between splits")
-
-    # Exact duplicate contexts are also disallowed across splits.
-    if (
-        {record.context for record in dev}
-        & {record.context for record in test}
-    ):
-        raise ValueError("Duplicate contexts across splits")
-
-
-def write_jsonl(path, records):
-    """Write deterministic JSONL and return its SHA-256 checksum."""
-    lines = [
-        json.dumps(
-            record.model_dump(),
-            ensure_ascii=False,
-            sort_keys=True,
-        )
-        for record in records
-    ]
-
-    contents = "\n".join(lines) + "\n"
-    path.write_text(contents, encoding="utf-8")
-
-    return hashlib.sha256(
-        path.read_bytes()
-    ).hexdigest()
-
-
 def build_dataset(
     output_dir: Path,
     seed: int = 42,
@@ -123,24 +178,19 @@ def build_dataset(
     revision: str | None = None,
     overwrite: bool = False,
 ):
-    """Build source-disjoint development and test subsets."""
+    """Build the original source-disjoint development/test splits."""
     if per_category < 1:
         raise ValueError("per_category must be positive")
 
     output_dir = Path(output_dir)
+
     paths = {
         "dev": output_dir / "squad_dev.jsonl",
         "test": output_dir / "squad_test.jsonl",
         "manifest": output_dir / "squad_manifest.json",
     }
 
-    if not overwrite:
-        existing = [str(p) for p in paths.values() if p.exists()]
-        if existing:
-            raise FileExistsError(
-                f"Outputs already exist: {existing}. "
-                "Use --overwrite to regenerate intentionally."
-            )
+    check_output_paths(paths, overwrite)
 
     rng = random.Random(seed)
 
@@ -152,7 +202,6 @@ def build_dataset(
 
     groups = group_by_article(dataset)
 
-    # Sorting before shuffling makes the ordering reproducible.
     articles = sorted(groups)
     rng.shuffle(articles)
 
@@ -166,11 +215,12 @@ def build_dataset(
         ordered_groups, next_index, per_category, rng
     )
 
-    # Apply the tested adapter and Pydantic validation.
     dev = [adapt_squad_example(row) for row in dev_raw]
     test = [adapt_squad_example(row) for row in test_raw]
 
     validate_splits(dev, test)
+    validate_counts(dev, per_category)
+    validate_counts(test, per_category)
 
     output_dir.mkdir(parents=True, exist_ok=True)
 
@@ -187,12 +237,12 @@ def build_dataset(
         "splits": {
             "dev": {
                 "count": len(dev),
-                "categories": dict(Counter(r.category for r in dev)),
+                "categories": category_counts(dev),
                 "sha256": dev_hash,
             },
             "test": {
                 "count": len(test),
-                "categories": dict(Counter(r.category for r in test)),
+                "categories": category_counts(test),
                 "sha256": test_hash,
             },
         },
@@ -210,39 +260,496 @@ def build_dataset(
     return manifest
 
 
+# ---------------------------------------------------------
+# Baseline and curation validation
+# ---------------------------------------------------------
+
+def load_verified_baseline(baseline_dir: Path):
+    """
+    Load existing splits and verify them against their manifest.
+
+    No source file is modified.
+    """
+    manifest_path = baseline_dir / "squad_manifest.json"
+
+    manifest = json.loads(
+        manifest_path.read_text(encoding="utf-8")
+    )
+
+    if manifest["dataset"] != DATASET_NAME:
+        raise ValueError("Unexpected baseline dataset")
+
+    if manifest["source_split"] != SOURCE_SPLIT:
+        raise ValueError("Unexpected baseline source split")
+
+    if manifest["grouping_strategy"] != "article_title":
+        raise ValueError("Unsupported baseline grouping strategy")
+
+    revision = manifest["source_revision"]
+
+    if not re.fullmatch(r"[0-9a-fA-F]{40}", revision):
+        raise ValueError(
+            "Curated builds require a pinned 40-character "
+            "dataset commit SHA"
+        )
+
+    dev_path = baseline_dir / "squad_dev.jsonl"
+    test_path = baseline_dir / "squad_test.jsonl"
+
+    for name, path in (
+        ("dev", dev_path),
+        ("test", test_path),
+    ):
+        expected_hash = manifest["splits"][name]["sha256"]
+
+        if sha256_file(path) != expected_hash:
+            raise ValueError(
+                f"Baseline {name} checksum mismatch"
+            )
+
+    dev = read_jsonl(dev_path)
+    test = read_jsonl(test_path)
+
+    per_category = manifest["per_category_per_split"]
+
+    validate_counts(dev, per_category)
+    validate_counts(test, per_category)
+    validate_splits(dev, test)
+
+    return manifest, dev, test
+
+
+def load_exclusions(
+    exclusions_path: Path,
+    revision: str,
+) -> tuple[dict, set[str]]:
+    """Load approved exclusion IDs and verify provenance."""
+    config = json.loads(
+        exclusions_path.read_text(encoding="utf-8")
+    )
+
+    if config["dataset"] != DATASET_NAME:
+        raise ValueError("Exclusion dataset mismatch")
+
+    if config["source_revision"] != revision:
+        raise ValueError("Exclusion source revision mismatch")
+
+    if config.get("review_status") != "project_owner_approved":
+        raise ValueError("Exclusions are not project-owner approved")
+
+    excluded_ids = set(config["excluded_ids"])
+
+    if not excluded_ids:
+        raise ValueError("Exclusion list is empty")
+
+    challenge_ids = set(
+        config.get("false_premise_challenge_candidates", [])
+    )
+
+    if not challenge_ids <= excluded_ids:
+        raise ValueError(
+            "Challenge candidates must be excluded records"
+        )
+
+    return config, excluded_ids
+
+
+# ---------------------------------------------------------
+# Deterministic replacement sampling
+# ---------------------------------------------------------
+
+def sample_replacements(
+    dataset,
+    excluded_ids: set[str],
+    existing_dev: list[EvidenceExample],
+    existing_test: list[EvidenceExample],
+    accepted_dev: list[EvidenceExample],
+    per_category: int,
+    seed: int,
+) -> list[EvidenceExample]:
+    """
+    Sample replacements without modifying approved records.
+
+    Replacement candidates:
+    - must not be excluded;
+    - must not duplicate any original example ID;
+    - must not share a source with the held-out test set;
+    - must not duplicate existing contexts;
+    - must restore the desired category balance.
+
+    Candidates may share an article with accepted development
+    records, because source isolation is required between
+    development and test, not within development.
+    """
+    counts = category_counts(accepted_dev)
+
+    remaining = {
+        category: per_category - counts[category]
+        for category in CATEGORIES
+    }
+
+    if any(value < 0 for value in remaining.values()):
+        raise ValueError("Too many accepted examples in a category")
+
+    if not any(remaining.values()):
+        return []
+
+    original_ids = {
+        record.id for record in existing_dev + existing_test
+    }
+
+    blocked_sources = {
+        record.source_id for record in existing_test
+    }
+
+    used_contexts = {
+        record.context for record in existing_dev + existing_test
+    }
+
+    groups = group_by_article(dataset)
+
+    rng = random.Random(seed)
+
+    articles = sorted(groups)
+    rng.shuffle(articles)
+
+    replacements = []
+
+    for article in articles:
+        if not any(remaining.values()):
+            break
+
+        records = sorted(
+            groups[article],
+            key=lambda row: row["id"],
+        )
+
+        for category in CATEGORIES:
+            if remaining[category] == 0:
+                continue
+
+            candidates = []
+
+            for row in records:
+                converted = adapt_squad_example(row)
+
+                if converted.category != category:
+                    continue
+
+                if converted.id in excluded_ids:
+                    continue
+
+                if converted.id in original_ids:
+                    continue
+
+                if converted.source_id in blocked_sources:
+                    continue
+
+                if converted.context in used_contexts:
+                    continue
+
+                candidates.append(converted)
+
+            if not candidates:
+                continue
+
+            selected = rng.choice(candidates)
+
+            replacements.append(selected)
+
+            original_ids.add(selected.id)
+            used_contexts.add(selected.context)
+
+            remaining[category] -= 1
+
+    if any(remaining.values()):
+        raise ValueError(
+            "Insufficient eligible replacement examples: "
+            f"{remaining}"
+        )
+
+    return replacements
+
+
+# ---------------------------------------------------------
+# Curated dataset builder
+# ---------------------------------------------------------
+
+def build_curated_dataset(
+    output_dir: Path,
+    baseline_dir: Path,
+    exclusions_path: Path,
+    seed: int = 42,
+    per_category: int = 10,
+    revision: str | None = None,
+):
+    """
+    Produce curated development candidates with an unchanged test set.
+
+    Never overwrites the original benchmark.
+
+    Replacement examples are marked as pending manual review.
+    """
+    output_dir = Path(output_dir)
+    baseline_dir = Path(baseline_dir)
+    exclusions_path = Path(exclusions_path)
+
+    if output_dir.resolve() == baseline_dir.resolve():
+        raise ValueError(
+            "Curated output must differ from baseline directory"
+        )
+
+    if per_category < 1:
+        raise ValueError("per_category must be positive")
+
+    paths = {
+        "dev": output_dir / "squad_dev.jsonl",
+        "test": output_dir / "squad_test.jsonl",
+        "manifest": output_dir / "squad_manifest.json",
+    }
+
+    # Curated outputs are immutable by default.
+    # Use a new output directory for another candidate version.
+    check_output_paths(paths, overwrite=False)
+
+    baseline_manifest, original_dev, original_test = (
+        load_verified_baseline(baseline_dir)
+    )
+
+    source_revision = baseline_manifest["source_revision"]
+
+    if revision is not None and revision != source_revision:
+        raise ValueError(
+            "Requested revision differs from baseline revision"
+        )
+
+    if (
+        per_category
+        != baseline_manifest["per_category_per_split"]
+    ):
+        raise ValueError(
+            "Curated category target must match the baseline"
+        )
+
+    exclusion_config, excluded_ids = load_exclusions(
+        exclusions_path,
+        source_revision,
+    )
+
+    dev_ids = {record.id for record in original_dev}
+    test_ids = {record.id for record in original_test}
+
+    if not excluded_ids <= dev_ids:
+        raise ValueError(
+            "Excluded IDs must belong to the baseline development set"
+        )
+
+    if excluded_ids & test_ids:
+        raise ValueError(
+            "Exclusion list contains held-out test IDs"
+        )
+
+    # Preserve every approved development example unchanged.
+    accepted_dev = [
+        record
+        for record in original_dev
+        if record.id not in excluded_ids
+    ]
+
+    dataset = load_dataset(
+        DATASET_NAME,
+        split=SOURCE_SPLIT,
+        revision=source_revision,
+    )
+
+    replacements = sample_replacements(
+        dataset=dataset,
+        excluded_ids=excluded_ids,
+        existing_dev=original_dev,
+        existing_test=original_test,
+        accepted_dev=accepted_dev,
+        per_category=per_category,
+        seed=seed,
+    )
+
+    curated_dev = accepted_dev + replacements
+
+    validate_counts(curated_dev, per_category)
+    validate_counts(original_test, per_category)
+    validate_splits(curated_dev, original_test)
+
+    curated_ids = {record.id for record in curated_dev}
+
+    if excluded_ids & curated_ids:
+        raise ValueError(
+            "Excluded IDs appeared in curated development data"
+        )
+
+    accepted_ids = {record.id for record in accepted_dev}
+    replacement_ids = {record.id for record in replacements}
+
+    if accepted_ids & replacement_ids:
+        raise ValueError(
+            "Replacement IDs overlap accepted records"
+        )
+
+    output_dir.mkdir(parents=True, exist_ok=True)
+
+    dev_hash = write_jsonl(paths["dev"], curated_dev)
+
+    # Copy held-out test BYTES rather than reserializing records.
+    # This preserves the original file checksum exactly.
+    original_test_path = baseline_dir / "squad_test.jsonl"
+    shutil.copyfile(original_test_path, paths["test"])
+
+    test_hash = sha256_file(paths["test"])
+    original_test_hash = baseline_manifest["splits"]["test"]["sha256"]
+
+    if test_hash != original_test_hash:
+        raise ValueError("Held-out test set changed during curation")
+
+    manifest = {
+        "dataset": DATASET_NAME,
+        "source_split": SOURCE_SPLIT,
+        "source_revision": source_revision,
+        "seed": seed,
+        "per_category_per_split": per_category,
+        "grouping_strategy": "article_title",
+        "curation": {
+            "status": "replacement_candidates_pending_review",
+            "guideline_version": exclusion_config["guideline_version"],
+            "baseline_manifest_sha256": sha256_file(
+                baseline_dir / "squad_manifest.json"
+            ),
+            "baseline_dev_sha256": (
+                baseline_manifest["splits"]["dev"]["sha256"]
+            ),
+            "baseline_test_sha256": original_test_hash,
+            "exclusion_file_sha256": sha256_file(exclusions_path),
+            "excluded_count": len(excluded_ids),
+            "retained_dev_count": len(accepted_dev),
+            "replacement_count": len(replacements),
+            "retained_dev_ids": [record.id for record in accepted_dev],
+            "replacement_ids": [record.id for record in replacements],
+            "test_preserved_byte_for_byte": True,
+        },
+        "splits": {
+            "dev": {
+                "count": len(curated_dev),
+                "categories": category_counts(curated_dev),
+                "sha256": dev_hash,
+                "review_status": "pending_replacement_audit",
+            },
+            "test": {
+                "count": len(original_test),
+                "categories": category_counts(original_test),
+                "sha256": test_hash,
+                "review_status": "unchanged_not_yet_audited",
+            },
+        },
+    }
+
+    paths["manifest"].write_text(
+        json.dumps(manifest, indent=2, sort_keys=True) + "\n",
+        encoding="utf-8",
+    )
+
+    print(f"Retained development examples: {len(accepted_dev)}")
+    print(f"Replacement candidates: {len(replacements)}")
+    print(f"Curated development examples: {len(curated_dev)}")
+    print(f"Held-out test examples: {len(original_test)}")
+    print(f"Test checksum unchanged: {test_hash == original_test_hash}")
+    print(f"Manifest: {paths['manifest']}")
+
+    return manifest
+
+
+# ---------------------------------------------------------
+# CLI
+# ---------------------------------------------------------
+
 def main():
     parser = argparse.ArgumentParser(
-        description="Build EvidenceTune SQuAD evaluation subsets"
+        description="Build EvidenceTune SQuAD evaluation datasets"
     )
 
     parser.add_argument(
         "--output-dir",
         type=Path,
-        default=Path("data/eval"),
+        default=None,
     )
+
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--per-category", type=int, default=10)
+
     parser.add_argument(
         "--revision",
         type=str,
         default=None,
-        help="Optional pinned Hugging Face dataset commit revision",
+        help="Pinned Hugging Face dataset commit revision",
     )
+
     parser.add_argument(
         "--overwrite",
         action="store_true",
-        help="Explicitly permit replacing existing outputs",
+        help="Allow overwrite in original dataset mode only",
+    )
+
+    parser.add_argument(
+        "--curate-from",
+        type=Path,
+        default=None,
+        help="Directory containing the verified original benchmark",
+    )
+
+    parser.add_argument(
+        "--exclusions",
+        type=Path,
+        default=None,
+        help="Approved exclusion configuration JSON",
     )
 
     args = parser.parse_args()
 
-    build_dataset(
-        output_dir=args.output_dir,
-        seed=args.seed,
-        per_category=args.per_category,
-        revision=args.revision,
-        overwrite=args.overwrite,
-    )
+    if args.curate_from is not None:
+        if args.exclusions is None:
+            parser.error(
+                "--exclusions is required with --curate-from"
+            )
+
+        if args.overwrite:
+            parser.error(
+                "--overwrite is not supported for curated builds"
+            )
+
+        build_curated_dataset(
+            output_dir=(
+                args.output_dir
+                or Path("data/eval/curated_v1")
+            ),
+            baseline_dir=args.curate_from,
+            exclusions_path=args.exclusions,
+            seed=args.seed,
+            per_category=args.per_category,
+            revision=args.revision,
+        )
+
+    else:
+        if args.exclusions is not None:
+            parser.error(
+                "--exclusions requires --curate-from"
+            )
+
+        build_dataset(
+            output_dir=(
+                args.output_dir
+                or Path("data/eval")
+            ),
+            seed=args.seed,
+            per_category=args.per_category,
+            revision=args.revision,
+            overwrite=args.overwrite,
+        )
 
 
 if __name__ == "__main__":
