@@ -1,0 +1,51 @@
+{
+  "approved_retained_ids": [
+    "squad_v2:57377aac1c4567190057447d",
+    "squad_v2:57266193dd62a815002e832e",
+    "squad_v2:572756fe708984140094dc74",
+    "squad_v2:572861cc4b864d1900164960",
+    "squad_v2:57263c78ec44d21400f3dc7b",
+    "squad_v2:5a66797c846392001a1e1c49",
+    "squad_v2:570611c475f01819005e793c",
+    "squad_v2:5ad031ef77cf76001a686df6",
+    "squad_v2:57300a25a23a5019007fcc9b",
+    "squad_v2:572991943f37b319004784a2",
+    "squad_v2:57377ec7c3c5551400e51f08",
+    "squad_v2:572665ff708984140094c4c3",
+    "squad_v2:5a5808ef770dc0001aeeff67",
+    "squad_v2:5ad0206677cf76001a686afd"
+  ],
+  "dataset": "rajpurkar/squad_v2",
+  "excluded_ids": {
+    "squad_v2:56dde1d966d3e219004dad8d": "Reference answer requires unsupported inference.",
+    "squad_v2:57306797396df919000960f1": "Incorrect reference answer; formal imperialism is more costly.",
+    "squad_v2:5a25d89aef59cd001a623cf8": "Malformed question with unclear requested relationship.",
+    "squad_v2:5a25f6a3c93d92001a400368": "Ambiguous salary survey question",
+    "squad_v2:5a550c52134fea001a0e1858": "Potentially answerable connection-oriented transmission question",
+    "squad_v2:5a57fe29770dc0001aeeff1b": "Ambiguous reference to lower Grand Canyon rocks.",
+    "squad_v2:5a8917433b2508001a72a4b2": "Malformed question using incorrect mathematical terminology.",
+    "squad_v2:5acf808877cf76001a685004": "False premise; incorrect presidential ordinal.",
+    "squad_v2:5acf9a5277cf76001a685420": "False premise: Woods Hole rather than Chicago campus",
+    "squad_v2:5ad0301577cf76001a686db8": "False premise: three forms rather than two",
+    "squad_v2:5ad03c7377cf76001a686ebc": "False premise; incorrect earthquake damage amount.",
+    "squad_v2:5ad26d27d7d075001a4293c2": "Ambiguous geographic question.",
+    "squad_v2:5ad27697d7d075001a42951b": "Ambiguous question; kinetic friction appears to answer it.",
+    "squad_v2:5ad277d3d7d075001a429549": "Ambiguous spatial-spin correlation question; abstention target unreliable",
+    "squad_v2:5ad3ad61604f3c001a3fec0d": "False premise; chronology is reversed.",
+    "squad_v2:5ad40358604f3c001a3ffd7e": "False premise: three customaries rather than two"
+  },
+  "false_premise_challenge_candidates": [
+    "squad_v2:5acf808877cf76001a685004",
+    "squad_v2:5acf9a5277cf76001a685420",
+    "squad_v2:5ad0301577cf76001a686db8",
+    "squad_v2:5ad03c7377cf76001a686ebc",
+    "squad_v2:5ad3ad61604f3c001a3fec0d",
+    "squad_v2:5ad40358604f3c001a3ffd7e"
+  ],
+  "guideline_version": "0.2",
+  "independent_double_review": false,
+  "parent_version": "curated_v1",
+  "review_status": "project_owner_approved",
+  "source_revision": "3ffb306f725f7d2ce8394bc1873b24868140c412",
+  "version": "2.0"
+}

@@ -1,0 +1,26 @@
+{
+  "dataset": "rajpurkar/squad_v2",
+  "grouping_strategy": "article_title",
+  "per_category_per_split": 10,
+  "seed": 42,
+  "source_revision": "3ffb306f725f7d2ce8394bc1873b24868140c412",
+  "source_split": "validation",
+  "splits": {
+    "dev": {
+      "categories": {
+        "answerable": 10,
+        "unanswerable": 10
+      },
+      "count": 20,
+      "sha256": "aef86cd90bb3a76c5b4052009d2d6715563fad1b0a34badc2011f1b81268fd57"
+    },
+    "test": {
+      "categories": {
+        "answerable": 10,
+        "unanswerable": 10
+      },
+      "count": 20,
+      "sha256": "0c6f9b3c89104fc79ffcc26efa506df7541044e586d43b8efca57b3f8ce56e5b"
+    }
+  }
+}

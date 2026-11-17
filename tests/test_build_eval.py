@@ -190,6 +190,72 @@ def save_exclusion_config(case, config):
     )
 
 
+@pytest.fixture
+def successive_case(curation_case, tmp_path):
+    """Mirror v1 -> v2: ten old exclusions, six new ones, 14 survivors."""
+    case = curation_case
+    parent_dir = tmp_path / "curated_v1"
+    parent_manifest = run_curation(case, output_dir=parent_dir)
+    parent_dev = read_jsonl(parent_dir / "squad_dev.jsonl")
+    replacement_ids = set(parent_manifest["curation"]["replacement_ids"])
+    newly_excluded = {
+        record["id"] for record in parent_dev
+        if record["id"] in replacement_ids
+        and record["category"] == "unanswerable"
+    }
+    newly_excluded = set(sorted(newly_excluded)[:6])
+    approved = [r["id"] for r in parent_dev if r["id"] not in newly_excluded]
+    config = {
+        **case["config"],
+        "version": "2.0",
+        "parent_version": "curated_v1",
+        "excluded_ids": {
+            **case["config"]["excluded_ids"],
+            **{record_id: "Synthetic second-round exclusion"
+               for record_id in sorted(newly_excluded)},
+        },
+        "approved_retained_ids": approved,
+    }
+    result = {
+        **case,
+        "parent_dir": parent_dir,
+        "parent_dev": parent_dev,
+        "parent_manifest": parent_manifest,
+        "output_dir": tmp_path / "curated_v2",
+        "exclusions_path": tmp_path / "exclusions_v2.json",
+        "config": config,
+        "newly_excluded_ids": newly_excluded,
+    }
+    save_exclusion_config(result, config)
+    assert len(newly_excluded) == 6
+    assert len(approved) == 14
+    # Exercise the real v1 legacy format, which has no excluded_ids field.
+    assert "excluded_ids" not in parent_manifest["curation"]
+    return result
+
+
+def run_successive(case, **overrides):
+    options = {
+        "output_dir": case["output_dir"],
+        "baseline_dir": case["baseline_dir"],
+        "parent_dir": case["parent_dir"],
+        "exclusions_path": case["exclusions_path"],
+        "seed": 42,
+        "per_category": 10,
+        "revision": PINNED_REVISION,
+    }
+    options.update(overrides)
+    return build_eval.build_successive_curated_dataset(**options)
+
+
+def artifact_bytes(directory):
+    """Snapshot all benchmark artifacts, including manifest formatting."""
+    return {
+        name: (directory / name).read_bytes()
+        for name in ("squad_dev.jsonl", "squad_test.jsonl", "squad_manifest.json")
+    }
+
+
 # =========================================================
 # PART 1: ORIGINAL DATASET BUILDER
 # =========================================================
@@ -827,3 +893,303 @@ def test_insufficient_replacements_rejected(
     assert not (
         case["output_dir"] / "squad_manifest.json"
     ).exists()
+
+
+# =========================================================
+# PART 3: SUCCESSIVE CURATION (curated_v1 -> curated_v2)
+# =========================================================
+
+
+def test_successive_preserves_approved_record_data(successive_case):
+    case = successive_case
+    manifest = run_successive(case)
+    parent = {r["id"]: r for r in case["parent_dev"]}
+    output = read_jsonl(case["output_dir"] / "squad_dev.jsonl")
+    approved = case["config"]["approved_retained_ids"]
+    assert [r["id"] for r in output[:14]] == approved
+    for record in output[:14]:
+        assert record == parent[record["id"]]
+        # Compare deterministic record bytes, independent of file position.
+        assert json.dumps(record, sort_keys=True).encode() == json.dumps(
+            parent[record["id"]], sort_keys=True
+        ).encode()
+    # Approved replacements from v1 must survive, not just baseline records.
+    assert len(set(approved) & set(
+        case["parent_manifest"]["curation"]["replacement_ids"]
+    )) == 4
+    assert manifest["curation"]["retained_dev_ids"] == approved
+
+
+def test_successive_cumulative_exclusions_and_balance(successive_case):
+    case = successive_case
+    manifest = run_successive(case)
+    records = read_jsonl(case["output_dir"] / "squad_dev.jsonl")
+    ids = {r["id"] for r in records}
+    assert len(ids) == len(records) == 20
+    assert ids.isdisjoint(case["config"]["excluded_ids"])
+    assert Counter(r["category"] for r in records) == {
+        "answerable": 10, "unanswerable": 10,
+    }
+    replacements = set(manifest["curation"]["replacement_ids"])
+    assert len(replacements) == 6
+    assert replacements == ids - set(case["config"]["approved_retained_ids"])
+    assert {r["category"] for r in records if r["id"] in replacements} == {
+        "unanswerable",
+    }
+    historical = case["original_dev"] + case["original_test"] + case["parent_dev"]
+    assert replacements.isdisjoint(r["id"] for r in historical)
+
+
+def test_successive_reproducible_outputs(successive_case, tmp_path):
+    case = successive_case
+    output_a, output_b = tmp_path / "run_a", tmp_path / "run_b"
+    assert run_successive(case, output_dir=output_a) == run_successive(
+        case, output_dir=output_b
+    )
+    assert artifact_bytes(output_a) == artifact_bytes(output_b)
+
+
+def test_successive_preserves_test_and_input_artifacts(successive_case):
+    case = successive_case
+    baseline_before = artifact_bytes(case["baseline_dir"])
+    parent_before = artifact_bytes(case["parent_dir"])
+    config_before = case["exclusions_path"].read_bytes()
+    manifest = run_successive(case)
+    assert artifact_bytes(case["baseline_dir"]) == baseline_before
+    assert artifact_bytes(case["parent_dir"]) == parent_before
+    assert case["exclusions_path"].read_bytes() == config_before
+    assert (case["output_dir"] / "squad_test.jsonl").read_bytes() == (
+        baseline_before["squad_test.jsonl"]
+    ) == parent_before["squad_test.jsonl"]
+    assert manifest["splits"]["test"]["sha256"] == sha256(
+        case["baseline_dir"] / "squad_test.jsonl"
+    )
+    assert manifest["curation"]["test_preserved_byte_for_byte"] is True
+
+
+@pytest.mark.parametrize("split", ["dev", "test"])
+def test_successive_corrupted_parent_data_rejected(successive_case, split):
+    case = successive_case
+    path = case["parent_dir"] / f"squad_{split}.jsonl"
+    path.write_bytes(path.read_bytes() + b"\n")
+    with pytest.raises(ValueError, match=f"Baseline {split} checksum mismatch"):
+        run_successive(case)
+    assert not case["output_dir"].exists()
+
+
+@pytest.mark.parametrize(
+    "section,field,error",
+    [
+        ("dev", "sha256", "Baseline dev checksum mismatch"),
+        ("test", "sha256", "Baseline test checksum mismatch"),
+        ("curation", "baseline_manifest_sha256", "Parent baseline manifest checksum mismatch"),
+        ("curation", "baseline_dev_sha256", "Parent baseline development checksum mismatch"),
+        ("curation", "baseline_test_sha256", "Parent baseline test checksum mismatch"),
+    ],
+)
+def test_successive_corrupted_parent_manifest_rejected(
+    successive_case, section, field, error
+):
+    case = successive_case
+    path = case["parent_dir"] / "squad_manifest.json"
+    manifest = json.loads(path.read_text())
+    target = manifest["curation"] if section == "curation" else manifest["splits"][section]
+    target[field] = "0" * 64
+    path.write_text(json.dumps(manifest), encoding="utf-8")
+    with pytest.raises(ValueError, match=error):
+        run_successive(case)
+    assert not case["output_dir"].exists()
+
+
+def test_successive_parent_test_must_match_original_even_with_updated_hash(successive_case):
+    case = successive_case
+    test_path = case["parent_dir"] / "squad_test.jsonl"
+    test_path.write_bytes(test_path.read_bytes() + b"\n")
+    manifest_path = case["parent_dir"] / "squad_manifest.json"
+    manifest = json.loads(manifest_path.read_text())
+    manifest["splits"]["test"]["sha256"] = sha256(test_path)
+    manifest_path.write_text(json.dumps(manifest), encoding="utf-8")
+    with pytest.raises(ValueError, match="Parent held-out test differs from baseline"):
+        run_successive(case)
+    assert not case["output_dir"].exists()
+
+
+@pytest.mark.parametrize("invalid", ["omitted_history", "unknown", "heldout", "no_new"])
+def test_successive_invalid_exclusions_rejected(successive_case, invalid):
+    case = successive_case
+    config = case["config"]
+    if invalid == "omitted_history":
+        # Avoid the challenge-candidate guard so the cumulative guard is tested.
+        old_id = next(iter(case["excluded_ids"] - set(
+            config["false_premise_challenge_candidates"]
+        )))
+        del config["excluded_ids"][old_id]
+        error = "Cumulative exclusions omit prior exclusions"
+    elif invalid == "unknown":
+        config["excluded_ids"]["squad_v2:unknown"] = "Unknown record"
+        error = "Exclusions contain unknown historical IDs"
+    elif invalid == "heldout":
+        config["excluded_ids"][case["original_test"][0]["id"]] = "Test record"
+        error = "Exclusion list contains held-out test IDs"
+    else:
+        for record_id in case["newly_excluded_ids"]:
+            del config["excluded_ids"][record_id]
+        error = "No newly excluded parent examples"
+    save_exclusion_config(case, config)
+    with pytest.raises(ValueError, match=error):
+        run_successive(case)
+    assert not case["output_dir"].exists()
+
+
+@pytest.mark.parametrize(
+    "invalid",
+    ["missing", "null", "string", "non_string", "duplicate", "empty",
+     "missing_survivor", "unknown", "excluded", "heldout"],
+)
+def test_successive_invalid_approved_retained_list_rejected(successive_case, invalid):
+    case = successive_case
+    config = case["config"]
+    approved = config["approved_retained_ids"]
+    error = "Approved retained IDs mismatch parent survivors"
+    if invalid in {"missing", "null", "string", "non_string"}:
+        error = "Successive curation requires approved_retained_ids list"
+        if invalid == "missing":
+            del config["approved_retained_ids"]
+        else:
+            config["approved_retained_ids"] = {
+                "null": None, "string": approved[0], "non_string": [123],
+            }[invalid]
+    elif invalid == "duplicate":
+        approved.append(approved[0])
+        error = "Duplicate approved retained IDs"
+    elif invalid == "empty":
+        config["approved_retained_ids"] = []
+    elif invalid == "missing_survivor":
+        approved.pop()
+    else:
+        approved.append({
+            "unknown": "squad_v2:unknown",
+            "excluded": sorted(case["newly_excluded_ids"])[0],
+            "heldout": case["original_test"][0]["id"],
+        }[invalid])
+    save_exclusion_config(case, config)
+    with pytest.raises(ValueError, match=error):
+        run_successive(case)
+    assert not case["output_dir"].exists()
+
+
+def test_successive_newly_rejected_ids_cannot_be_resampled(
+    successive_case, mock_squad_dataset, monkeypatch
+):
+    case = successive_case
+    # Give rejected IDs fresh sources/contexts so those filters cannot mask
+    # a regression in historical-ID blocking. No valid candidates remain.
+    rejected = [
+        {**row, "title": f"Fresh_{row['id']}", "context": f"Fresh evidence {row['id']}"}
+        for row in mock_squad_dataset
+        if f"squad_v2:{row['id']}" in case["newly_excluded_ids"]
+    ]
+    assert len(rejected) == 6
+    monkeypatch.setattr(build_eval, "load_dataset", lambda *a, **k: rejected)
+    with pytest.raises(ValueError, match="Insufficient eligible replacement examples"):
+        run_successive(case)
+    assert not case["output_dir"].exists()
+
+
+def test_successive_source_and_context_isolation(
+    successive_case, mock_squad_dataset, monkeypatch
+):
+    case = successive_case
+    test_ids = {r["id"] for r in case["original_test"]}
+    test_rows = [row for row in mock_squad_dataset
+                 if f"squad_v2:{row['id']}" in test_ids and not row["answers"]["text"]]
+    # Fresh IDs and contexts on held-out articles must still be blocked.
+    source_traps = [
+        {**row, "id": f"source_trap_{i}", "context": f"New context {i}"}
+        for i, row in enumerate(test_rows)
+    ]
+    # Fresh IDs and articles with held-out contexts must also be blocked.
+    context_traps = [
+        {**row, "id": f"context_trap_{i}", "title": f"New article {i}"}
+        for i, row in enumerate(test_rows)
+    ]
+    traps = source_traps + context_traps
+    monkeypatch.setattr(build_eval, "load_dataset", lambda *a, **k: traps)
+    with pytest.raises(ValueError, match="Insufficient eligible replacement examples"):
+        run_successive(case)
+    assert not case["output_dir"].exists()
+
+    monkeypatch.setattr(
+        build_eval, "load_dataset", lambda *a, **k: traps + mock_squad_dataset
+    )
+    run_successive(case)
+    dev = read_jsonl(case["output_dir"] / "squad_dev.jsonl")
+    test = case["original_test"]
+    for field in ("id", "source_id", "context"):
+        assert {r[field] for r in dev}.isdisjoint(r[field] for r in test)
+    assert {r["id"] for r in dev}.isdisjoint(f"squad_v2:{r['id']}" for r in traps)
+
+
+@pytest.mark.parametrize("target", ["parent_dir", "baseline_dir", "existing_output"])
+def test_successive_outputs_cannot_be_overwritten(successive_case, target):
+    case = successive_case
+    if target == "existing_output":
+        # An existing first-round curated artifact at a different directory
+        # must be protected by the output-file guard as well.
+        run_curation(case, output_dir=case["output_dir"],
+                     exclusions_path=case["exclusions_path"].parent / "exclusions.json")
+        output_dir = case["output_dir"]
+        error_type = FileExistsError
+        message = "Outputs already exist"
+    else:
+        output_dir = case[target]
+        error_type = ValueError
+        message = "directories must differ"
+    before = artifact_bytes(output_dir)
+    with pytest.raises(error_type, match=message):
+        run_successive(case, output_dir=output_dir)
+    assert artifact_bytes(output_dir) == before
+
+
+def test_successive_manifest_lineage_and_provenance(successive_case, monkeypatch):
+    case = successive_case
+    loader = build_eval.load_dataset
+    calls = []
+
+    def checked_loader(name, split, revision):
+        calls.append((name, split, revision))
+        return loader(name, split, revision)
+
+    monkeypatch.setattr(build_eval, "load_dataset", checked_loader)
+    manifest = run_successive(case)
+    assert calls == [("rajpurkar/squad_v2", "validation", PINNED_REVISION)]
+    assert manifest == json.loads((case["output_dir"] / "squad_manifest.json").read_text())
+    assert manifest["source_revision"] == PINNED_REVISION
+    assert manifest["seed"] == 42
+    curation = manifest["curation"]
+    assert curation["parent_version"] == "curated_v1"
+    for field, directory, filename in [
+        ("parent_manifest_sha256", "parent_dir", "squad_manifest.json"),
+        ("parent_dev_sha256", "parent_dir", "squad_dev.jsonl"),
+        ("baseline_manifest_sha256", "baseline_dir", "squad_manifest.json"),
+        ("baseline_dev_sha256", "baseline_dir", "squad_dev.jsonl"),
+        ("baseline_test_sha256", "baseline_dir", "squad_test.jsonl"),
+    ]:
+        assert curation[field] == sha256(case[directory] / filename)
+    assert curation["exclusion_file_sha256"] == sha256(case["exclusions_path"])
+    assert curation["excluded_ids"] == sorted(case["config"]["excluded_ids"])
+    assert curation["excluded_count"] == 16
+    assert curation["newly_excluded_ids"] == sorted(case["newly_excluded_ids"])
+    assert curation["newly_excluded_count"] == 6
+    assert curation["retained_dev_count"] == 14
+    assert curation["replacement_count"] == 6
+    assert curation["retained_dev_ids"] == case["config"]["approved_retained_ids"]
+    assert curation["guideline_version"] == "0.2"
+    assert curation["approval_status"] == "project_owner_approved"
+    assert curation["independent_double_review"] is False
+    assert curation["status"] == "replacement_candidates_pending_review"
+    assert manifest["splits"]["dev"]["review_status"] == "pending_replacement_audit"
+    for split in ("dev", "test"):
+        assert manifest["splits"][split]["sha256"] == sha256(
+            case["output_dir"] / f"squad_{split}.jsonl"
+        )

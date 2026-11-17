@@ -119,7 +119,8 @@ def check_output_paths(paths: dict, overwrite: bool = False):
     if existing:
         raise FileExistsError(
             f"Outputs already exist: {existing}. "
-            "Use --overwrite to regenerate intentionally."
+            "Use --overwrite only in original dataset mode; "
+            "use a new output directory for curated versions."
         )
 
 
@@ -665,6 +666,330 @@ def build_curated_dataset(
 
 
 # ---------------------------------------------------------
+# Successive curated versions (curated_v2 and beyond)
+# ---------------------------------------------------------
+
+def load_verified_parent(
+    parent_dir: Path,
+    baseline_dir: Path,
+    baseline_manifest: dict,
+    baseline_dev: list[EvidenceExample],
+    baseline_test: list[EvidenceExample],
+) -> tuple[dict, list[EvidenceExample], set[str]]:
+    """Verify parent lineage, unchanged test bytes, and prior exclusions.
+
+    The original curated_v1 manifest predates the `excluded_ids` field.
+    For that version only, historical exclusions are reconstructed from
+    the original development IDs absent from its curated development set.
+    """
+    parent_manifest, parent_dev, parent_test = load_verified_baseline(
+        parent_dir
+    )
+
+    if "curation" not in parent_manifest:
+        raise ValueError("Parent is not a curated dataset")
+
+    for field in (
+        "dataset", "source_split", "source_revision",
+        "per_category_per_split", "grouping_strategy",
+    ):
+        if parent_manifest[field] != baseline_manifest[field]:
+            raise ValueError(f"Parent/baseline mismatch: {field}")
+
+    curation = parent_manifest["curation"]
+    if curation.get("status") != "replacement_candidates_pending_review":
+        raise ValueError("Unsupported parent curation status")
+
+    expected_baseline_manifest_sha = sha256_file(
+        baseline_dir / "squad_manifest.json"
+    )
+    expected_dev_sha = baseline_manifest["splits"]["dev"]["sha256"]
+    expected_test_sha = baseline_manifest["splits"]["test"]["sha256"]
+
+    if curation.get("baseline_manifest_sha256") != expected_baseline_manifest_sha:
+        raise ValueError("Parent baseline manifest checksum mismatch")
+
+    if curation.get("baseline_dev_sha256") != expected_dev_sha:
+        raise ValueError("Parent baseline development checksum mismatch")
+
+    if curation.get("baseline_test_sha256") != expected_test_sha:
+        raise ValueError("Parent baseline test checksum mismatch")
+
+    if (
+        (parent_dir / "squad_test.jsonl").read_bytes()
+        != (baseline_dir / "squad_test.jsonl").read_bytes()
+    ):
+        raise ValueError("Parent held-out test differs from baseline")
+
+    if curation.get("test_preserved_byte_for_byte") is not True:
+        raise ValueError("Parent test preservation not documented")
+
+    retained_ids = curation.get("retained_dev_ids", [])
+    replacement_ids = curation.get("replacement_ids", [])
+    parent_ids = {record.id for record in parent_dev}
+    baseline_ids = {record.id for record in baseline_dev}
+
+    # Records already present in the original baseline must remain
+    # semantically and structurally unchanged in every curated version.
+    original_by_id = {record.id: record for record in baseline_dev}
+    for record in parent_dev:
+        if record.id in original_by_id and record != original_by_id[record.id]:
+            raise ValueError("Parent altered a baseline development record")
+
+    if (
+        len(retained_ids) != len(set(retained_ids))
+        or len(replacement_ids) != len(set(replacement_ids))
+        or set(retained_ids) & set(replacement_ids)
+        or set(retained_ids) | set(replacement_ids) != parent_ids
+        or len(retained_ids) != curation.get("retained_dev_count")
+        or len(replacement_ids) != curation.get("replacement_count")
+    ):
+        raise ValueError("Parent curated record inventory mismatch")
+
+    # For curated_v1, the baseline IDs missing from the parent are
+    # exactly the previously approved first-round exclusions.
+    prior_excluded_ids = set(curation.get("excluded_ids", []))
+    if "excluded_ids" not in curation:
+        prior_excluded_ids = baseline_ids - parent_ids
+        if not set(retained_ids) <= baseline_ids:
+            raise ValueError("Legacy parent retained ID provenance mismatch")
+
+    if (
+        len(prior_excluded_ids) != curation.get("excluded_count")
+        or prior_excluded_ids & parent_ids
+        or not (baseline_ids - parent_ids) <= prior_excluded_ids
+    ):
+        raise ValueError("Parent exclusion inventory mismatch")
+
+    test_ids = {record.id for record in baseline_test}
+    if prior_excluded_ids & test_ids:
+        raise ValueError("Parent exclusions contain held-out test records")
+
+    # load_verified_baseline already checked parent manifest hashes,
+    # category balance, ID uniqueness and split source isolation.
+    assert len(parent_test) == len(baseline_test)
+    return parent_manifest, parent_dev, prior_excluded_ids
+
+
+def build_successive_curated_dataset(
+    output_dir: Path,
+    baseline_dir: Path,
+    parent_dir: Path,
+    exclusions_path: Path,
+    seed: int = 42,
+    per_category: int = 10,
+    revision: str | None = None,
+):
+    """Build the next curated dataset while preserving audited records.
+
+    The exclusion file MUST contain cumulative exclusions and an explicit
+    project-owner-approved `approved_retained_ids` inventory. This avoids
+    silently treating unreviewed parent candidates as approved.
+
+    No baseline, parent, or held-out test artifact is modified.
+    """
+    output_dir = Path(output_dir)
+    baseline_dir = Path(baseline_dir)
+    parent_dir = Path(parent_dir)
+    exclusions_path = Path(exclusions_path)
+
+    resolved = {
+        output_dir.resolve(),
+        baseline_dir.resolve(),
+        parent_dir.resolve(),
+    }
+    if len(resolved) != 3:
+        raise ValueError(
+            "Curated output, parent, and baseline directories must differ"
+        )
+
+    if per_category < 1:
+        raise ValueError("per_category must be positive")
+
+    paths = {
+        "dev": output_dir / "squad_dev.jsonl",
+        "test": output_dir / "squad_test.jsonl",
+        "manifest": output_dir / "squad_manifest.json",
+    }
+    check_output_paths(paths, overwrite=False)
+
+    baseline_manifest, baseline_dev, baseline_test = load_verified_baseline(
+        baseline_dir
+    )
+    source_revision = baseline_manifest["source_revision"]
+
+    if revision is not None and revision != source_revision:
+        raise ValueError("Requested revision differs from baseline revision")
+
+    if per_category != baseline_manifest["per_category_per_split"]:
+        raise ValueError(
+            "Curated category target must match the baseline"
+        )
+
+    parent_manifest, parent_dev, prior_excluded_ids = load_verified_parent(
+        parent_dir=parent_dir,
+        baseline_dir=baseline_dir,
+        baseline_manifest=baseline_manifest,
+        baseline_dev=baseline_dev,
+        baseline_test=baseline_test,
+    )
+
+    config, excluded_ids = load_exclusions(
+        exclusions_path, source_revision
+    )
+
+    parent_ids = {record.id for record in parent_dev}
+    baseline_ids = {record.id for record in baseline_dev}
+    test_ids = {record.id for record in baseline_test}
+
+    if excluded_ids & test_ids:
+        raise ValueError("Exclusion list contains held-out test IDs")
+
+    if not prior_excluded_ids <= excluded_ids:
+        raise ValueError("Cumulative exclusions omit prior exclusions")
+
+    allowed_exclusion_ids = baseline_ids | parent_ids | prior_excluded_ids
+    if not excluded_ids <= allowed_exclusion_ids:
+        raise ValueError("Exclusions contain unknown historical IDs")
+
+    newly_excluded_ids = excluded_ids & parent_ids
+    if not newly_excluded_ids:
+        raise ValueError("No newly excluded parent examples")
+
+    accepted_dev = [
+        record for record in parent_dev
+        if record.id not in excluded_ids
+    ]
+    accepted_ids = {record.id for record in accepted_dev}
+
+    # Mandatory human approval inventory. Cumulative exclusions alone
+    # would silently promote every unexcluded pending candidate.
+    approved_ids = config.get("approved_retained_ids")
+    if not isinstance(approved_ids, list) or not all(
+        isinstance(item, str) for item in approved_ids
+    ):
+        raise ValueError(
+            "Successive curation requires approved_retained_ids list"
+        )
+    if len(approved_ids) != len(set(approved_ids)):
+        raise ValueError("Duplicate approved retained IDs")
+    if set(approved_ids) != accepted_ids:
+        raise ValueError("Approved retained IDs mismatch parent survivors")
+
+    # Preserve the parent records byte-equivalent at the Pydantic model
+    # level; never regenerate or adapt them from Hugging Face.
+    dataset = load_dataset(
+        DATASET_NAME,
+        split=SOURCE_SPLIT,
+        revision=source_revision,
+    )
+
+    replacements = sample_replacements(
+        dataset=dataset,
+        excluded_ids=excluded_ids,
+        # Block both the original and the immediately preceding curated
+        # examples. Excluded examples from earlier generations are
+        # already blocked by the cumulative exclusion file.
+        existing_dev=baseline_dev + parent_dev,
+        existing_test=baseline_test,
+        accepted_dev=accepted_dev,
+        per_category=per_category,
+        seed=seed,
+    )
+
+    curated_dev = accepted_dev + replacements
+    validate_counts(curated_dev, per_category)
+    validate_counts(baseline_test, per_category)
+    validate_splits(curated_dev, baseline_test)
+
+    curated_ids = {record.id for record in curated_dev}
+    if curated_ids & excluded_ids:
+        raise ValueError("Excluded IDs appeared in curated development data")
+
+    new_ids = {record.id for record in replacements}
+    if new_ids & (baseline_ids | parent_ids | test_ids):
+        raise ValueError("Replacement IDs were previously used")
+
+    output_dir.mkdir(parents=True, exist_ok=True)
+    dev_hash = write_jsonl(paths["dev"], curated_dev)
+
+    # The held-out test is copied from the ORIGINAL baseline, never
+    # reserialized or reconstructed from the parent.
+    shutil.copyfile(baseline_dir / "squad_test.jsonl", paths["test"])
+    test_hash = sha256_file(paths["test"])
+    original_test_hash = baseline_manifest["splits"]["test"]["sha256"]
+    if test_hash != original_test_hash:
+        raise ValueError("Held-out test set changed during curation")
+
+    manifest = {
+        "dataset": DATASET_NAME,
+        "source_split": SOURCE_SPLIT,
+        "source_revision": source_revision,
+        "seed": seed,
+        "per_category_per_split": per_category,
+        "grouping_strategy": "article_title",
+        "curation": {
+            "status": "replacement_candidates_pending_review",
+            "guideline_version": config["guideline_version"],
+            "baseline_manifest_sha256": sha256_file(
+                baseline_dir / "squad_manifest.json"
+            ),
+            "baseline_dev_sha256": baseline_manifest["splits"]["dev"]["sha256"],
+            "baseline_test_sha256": original_test_hash,
+            "parent_version": parent_dir.name,
+            "parent_manifest_sha256": sha256_file(
+                parent_dir / "squad_manifest.json"
+            ),
+            "parent_dev_sha256": parent_manifest["splits"]["dev"]["sha256"],
+            "exclusion_file_sha256": sha256_file(exclusions_path),
+            "excluded_count": len(excluded_ids),
+            "excluded_ids": sorted(excluded_ids),
+            "newly_excluded_count": len(newly_excluded_ids),
+            "newly_excluded_ids": sorted(newly_excluded_ids),
+            "retained_dev_count": len(accepted_dev),
+            "replacement_count": len(replacements),
+            "retained_dev_ids": [record.id for record in accepted_dev],
+            "replacement_ids": [record.id for record in replacements],
+            "approval_status": config["review_status"],
+            "independent_double_review": config.get(
+                "independent_double_review", False
+            ),
+            "test_preserved_byte_for_byte": True,
+        },
+        "splits": {
+            "dev": {
+                "count": len(curated_dev),
+                "categories": category_counts(curated_dev),
+                "sha256": dev_hash,
+                "review_status": "pending_replacement_audit",
+            },
+            "test": {
+                "count": len(baseline_test),
+                "categories": category_counts(baseline_test),
+                "sha256": test_hash,
+                "review_status": "unchanged_not_yet_audited",
+            },
+        },
+    }
+
+    paths["manifest"].write_text(
+        json.dumps(manifest, indent=2, sort_keys=True) + "\n",
+        encoding="utf-8",
+    )
+
+    print(f"Parent curated version: {parent_dir.name}")
+    print(f"Newly excluded parent examples: {len(newly_excluded_ids)}")
+    print(f"Retained development examples: {len(accepted_dev)}")
+    print(f"Replacement candidates: {len(replacements)}")
+    print(f"Curated development examples: {len(curated_dev)}")
+    print(f"Held-out test examples: {len(baseline_test)}")
+    print(f"Test checksum unchanged: {test_hash == original_test_hash}")
+    print(f"Manifest: {paths['manifest']}")
+
+    return manifest
+
+
+# ---------------------------------------------------------
 # CLI
 # ---------------------------------------------------------
 
@@ -709,6 +1034,13 @@ def main():
         help="Approved exclusion configuration JSON",
     )
 
+    parser.add_argument(
+        "--parent-curated",
+        type=Path,
+        default=None,
+        help="Prior curated directory for successive versions (v2+)",
+    )
+
     args = parser.parse_args()
 
     if args.curate_from is not None:
@@ -722,23 +1054,37 @@ def main():
                 "--overwrite is not supported for curated builds"
             )
 
-        build_curated_dataset(
-            output_dir=(
-                args.output_dir
-                or Path("data/eval/curated_v1")
-            ),
-            baseline_dir=args.curate_from,
-            exclusions_path=args.exclusions,
-            seed=args.seed,
-            per_category=args.per_category,
-            revision=args.revision,
-        )
+        if args.parent_curated is not None:
+            build_successive_curated_dataset(
+                output_dir=(
+                    args.output_dir
+                    or Path("data/eval/curated_v2")
+                ),
+                baseline_dir=args.curate_from,
+                parent_dir=args.parent_curated,
+                exclusions_path=args.exclusions,
+                seed=args.seed,
+                per_category=args.per_category,
+                revision=args.revision,
+            )
+        else:
+            build_curated_dataset(
+                output_dir=(
+                    args.output_dir
+                    or Path("data/eval/curated_v1")
+                ),
+                baseline_dir=args.curate_from,
+                exclusions_path=args.exclusions,
+                seed=args.seed,
+                per_category=args.per_category,
+                revision=args.revision,
+            )
 
     else:
         if args.exclusions is not None:
-            parser.error(
-                "--exclusions requires --curate-from"
-            )
+            parser.error("--exclusions requires --curate-from")
+        if args.parent_curated is not None:
+            parser.error("--parent-curated requires --curate-from")
 
         build_dataset(
             output_dir=(

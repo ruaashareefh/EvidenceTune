@@ -6,7 +6,12 @@
 **Evaluation split:** Development  
 **Annotation guidelines:** v0.2  
 **Review method:** AI-assisted evidence-based adjudication  
-**Status:** Recommendations complete; independent verification pending
+**Status:** Original-development audit below is historical; current curated_v2 decisions are in section 8.
+
+**Current checkpoint (M1B.7E):** All six curated_v2 replacements have
+project-owner-approved dispositions. There are 17 approved records and three
+approved exclusions. Independent double review has not been performed.
+The next curation round is authorized but has not started.
 
 ---
 
@@ -297,3 +302,211 @@ Once the adjudication recommendations are verified and approved:
 - Freeze the benchmark only after all included records are approved.
 
 **Current status:** Evidence-based adjudication recommendations complete. Final verification and approval pending.
+
+---
+
+## 8. curated_v2 Adjudication — M1B.7E
+
+This section records subsequent project-owner decisions for curated_v2.
+The preceding sections describe the historical original-development audit.
+
+**Review method:** AI-assisted review of supplied evidence, followed by explicit
+project-owner approval in conversation. Independent double review not performed.
+
+### Cavendish/Newton Attribution
+
+**Record ID:** `squad_v2:5ad27f01d7d075001a429745`
+
+**Question:** Cavendish's Law of Gravitation states what?
+
+**Original category:** `unanswerable`
+
+**Original reference:** The provided context does not contain enough information
+to answer the question.
+
+**Evidence:** The passage attributes the law to Newton ("Newton's Law of
+Gravitation") and describes Cavendish's measurement using a torsion balance.
+The passage ends with "is" without supplying the mathematical expression.
+
+**Finding:** The question misattributes the discussed law. The evidence supports
+correcting that attribution, but the missing expression prevents stating the
+complete law from the supplied context. This does not establish that no law
+called Cavendish's law exists outside this passage.
+
+**Issue:** False premise; incomplete mathematical evidence.
+
+**Approved disposition:** Exclude from the primary benchmark; retain as a
+false-premise challenge-set candidate, with the missing-expression limitation
+documented. Generic abstention alone does not capture the supported correction.
+
+**Approval:** Project owner explicitly agreed to this disposition in conversation
+on 2026-11-16 ("yes agree").
+
+**Application status:** Decision recorded only. Existing curated_v1/curated_v2
+artifacts and exclusion configurations remain unchanged; curated_v3 has not
+been created.
+
+### Metamorphism Pathways
+
+**Record ID:** `squad_v2:5a5812f9770dc0001aeeffd2`
+
+**Question:** What do analog models include in the pathway for metamorphism?
+
+**Original category:** `unanswerable`
+
+**Original reference:** The provided context does not contain enough information
+to answer the question.
+
+**Evidence:** After discussing analog and numerical models, the passage states:
+"These studies can also give useful information about pathways for metamorphism
+through pressure, temperature, space, and time."
+
+**Finding:** Pressure, temperature, space, and time form a plausible grounded
+answer. However, "these studies" does not precisely isolate analog models, and
+"include in the pathway" is unclear. Both answering and abstaining have
+defensible interpretations, making the reference unreliable for scoring.
+
+**Issue:** Ambiguous question; unreliable abstention target.
+
+**Approved disposition:** Exclude from the primary benchmark. Do not designate
+as a false-premise challenge candidate: no clear contradiction is established.
+
+**Approval:** Project owner explicitly agreed to this disposition in conversation
+on 2026-11-16 ("yes").
+
+**Application status:** Two curated_v2 exclusions are approved in this log only.
+Existing datasets and exclusion configurations remain unchanged; curated_v3
+has not been created.
+
+### Classification-System Scope
+
+**Record ID:** `squad_v2:5a23565482b03a001a4aa78f`
+
+**Question:** Who has a classification system for all North American companies?
+
+**Original category:** `unanswerable`
+
+**Original reference:** The provided context does not contain enough information
+to answer the question.
+
+**Evidence:** The passage identifies the Standard Industrial Classification and
+North American Industry Classification System as having a classification system
+for companies that perform or otherwise engage in construction. The remaining
+context describes construction subsectors and related service firms.
+
+**Finding:** The evidence does not establish coverage of all North American
+companies. A system's name alone does not establish universal coverage. Naming
+the systems as the answer would extend the stated scope beyond the evidence.
+The original abstention target is defensible; no false premise is demonstrated.
+
+**Approved disposition:** Retain as unanswerable with the original record
+unchanged. Resolve the earlier scope-ambiguity flag.
+
+**Approval:** Project owner explicitly agreed to retention in conversation
+on 2026-11-16 ("yes").
+
+### Oursel/Raimbaud Leadership
+
+**Record ID:** `squad_v2:5ad3e96b604f3c001a3ff68b`
+
+**Question:** What Frank led Norman forces?
+
+**Original category:** `unanswerable`
+
+**Original reference:** The provided context does not contain enough information
+to answer the question.
+
+**Evidence:** The passage describes Oursel as a Norman who led a force of
+"Franks." It subsequently identifies Norman troops formerly associated with
+Oursel as being led by Raimbaud from 1073 to 1074.
+
+**Finding:** Raimbaud directly matches the Norman-troop leadership statement,
+while Oursel is another plausible referent through the former association.
+The question supplies no date or event to distinguish them, and the passage
+does not clearly identify either individual as a Frank. Answering and abstaining
+therefore have defensible interpretations, making the reference unreliable.
+
+**Issue:** Ambiguous identity and leadership reference.
+
+**Approved disposition:** Exclude from the primary benchmark. Do not designate
+as a false-premise challenge candidate: the passage does not explicitly
+contradict the requested identity.
+
+**Approval:** Project owner explicitly agreed to exclusion in conversation
+on 2026-11-16 ("yes").
+
+### Chicago School of Psychology
+
+**Record ID:** `squad_v2:5acf9b1177cf76001a685444`
+
+**Question:** What gave way to the Chicago school of psychology?
+
+**Original category:** `unanswerable`
+
+**Original reference:** The provided context does not contain enough information
+to answer the question.
+
+**Evidence:** The passage states that the university's sociology department
+"gave birth to the Chicago school of sociology." It also discusses economics
+and scientific experiments, but does not identify what produced a Chicago
+school of psychology.
+
+**Finding:** Answering with the sociology department would substitute a related
+subject for the requested one. The passage does not establish that a psychology
+school never existed; this is missing evidence, not a demonstrated false premise.
+
+**Approved disposition:** Retain as unanswerable with the original record unchanged.
+
+**Approval:** Project owner explicitly approved retention of both the psychology
+and handshake examples in conversation on 2026-11-16 ("yes").
+
+### Communication Handshake Definition
+
+**Record ID:** `squad_v2:5a550e6f134fea001a0e1880`
+
+**Question:** What is the "hand shake" between communication parties?
+
+**Original category:** `unanswerable`
+
+**Original reference:** The provided context does not contain enough information
+to answer the question.
+
+**Evidence:** The passage states that X.25 requires a handshake between
+communicating parties before transmitting user packets. It discusses connection
+procedures but does not explicitly define the requested handshake.
+
+**Finding:** Evidence about when a process is required does not establish its
+definition. Supplying a technical definition would require outside knowledge.
+The existing abstention label and reference are defensible.
+
+**Approved disposition:** Retain as unanswerable with the original record unchanged.
+
+**Approval:** Project owner explicitly approved retention of both the psychology
+and handshake examples in conversation on 2026-11-16 ("yes").
+
+### curated_v2 Adjudication Summary
+
+All six replacement records have project-owner-approved dispositions:
+
+| Record | Disposition | False-premise challenge candidate |
+|---|---|---|
+| Cavendish/Newton attribution | Exclude | Yes; missing-expression limitation noted |
+| Metamorphism pathways | Exclude | No |
+| Classification-system scope | Retain as unanswerable | No |
+| Oursel/Raimbaud leadership | Exclude | No |
+| Chicago school of psychology | Retain as unanswerable | No |
+| Communication handshake definition | Retain as unanswerable | No |
+
+The 14 previously approved retained records plus the three newly approved
+replacement records give 17 approved records (10 answerable, 7 unanswerable).
+Three new unanswerable replacements are needed to restore the 10/10 balance.
+No curated_v2 replacement decisions remain pending. Any new replacements must
+undergo semantic review before approval; the benchmark is not yet frozen.
+
+**Application status:** Decisions are recorded in this log only. Existing
+datasets and exclusion configurations remain unchanged; curated_v3 has not
+been created. A future cumulative configuration incorporating the three approved
+exclusions would contain 19 exclusions and seven false-premise challenge
+candidates. The project owner authorized the next curation round after reviewing
+the project overview, then requested this Git checkpoint before generation.
+The next curation build is authorized but has not started.
