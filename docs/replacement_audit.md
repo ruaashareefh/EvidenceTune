@@ -2,6 +2,11 @@
 
 ## Current Checkpoint — M1B.7E
 
+**Latest update:** curated_v4 now contains 20 approved development records
+(10 answerable, 10 unanswerable), assembled from 19 unchanged v3 records and
+owner-approved Pool 001 Candidate 9. See [the assembly report](curated_v4_assembly.md).
+The account below describes the earlier v3 checkpoint.
+
 The sections below preserve the historical curated_v1 first-pass audit and its
 then-pending recommendations. They are not the current approval status.
 
@@ -18,14 +23,18 @@ handshake definition); three are excluded (Cavendish/Newton, metamorphism, and
 Oursel/Raimbaud). See [the adjudication log](adjudication_log.md#8-curated_v2-adjudication--m1b7e)
 for record IDs, evidence, rationale, and approvals.
 
-There are 17 approved development records: 10 answerable and seven unanswerable.
-Three new unanswerable replacements are needed. A future cumulative exclusion
-configuration will contain 19 exclusions and seven false-premise challenge
-candidates. These latest decisions are recorded in the log only; existing
-datasets, manifests, and exclusion configurations remain unchanged. Manifest
+Curated_v3 preserved 17 approved development records and generated three new
+unanswerable replacements. Two replacements are now approved for retention and
+one (Saturn/Mercury) is approved for exclusion. There are 19 approved development
+records: 10 answerable and nine unanswerable. One replacement is still needed.
+The v3 cumulative exclusion configuration contains 19 exclusions and seven
+false-premise challenge candidates. Existing original, v1, v2, and prior
+exclusion artifacts remain unchanged. Manifest
 review statuses describe their generation-time state, not subsequent approvals.
 
-The next curation round is authorized but has not started. No curated_v3 exists.
+Curated_v3 has passed structural verification and completed project-owner
+adjudication in [the v3 audit](curated_v3_audit.md). The latest decisions are
+documented only; no v4 configuration or dataset has been generated.
 The held-out test remains byte-for-byte preserved and still needs semantic
 review. Benchmark freeze and model evaluation remain pending.
 

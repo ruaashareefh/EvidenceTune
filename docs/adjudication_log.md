@@ -11,7 +11,9 @@
 **Current checkpoint (M1B.7E):** All six curated_v2 replacements have
 project-owner-approved dispositions. There are 17 approved records and three
 approved exclusions. Independent double review has not been performed.
-The next curation round is authorized but has not started.
+Curated_v3 has now been generated and adjudicated in [the v3 audit](curated_v3_audit.md).
+Its two approved retentions bring the total to 19 approved records; its one
+approved exclusion requires another unanswerable replacement.
 
 ---
 
@@ -503,10 +505,12 @@ Three new unanswerable replacements are needed to restore the 10/10 balance.
 No curated_v2 replacement decisions remain pending. Any new replacements must
 undergo semantic review before approval; the benchmark is not yet frozen.
 
-**Application status:** Decisions are recorded in this log only. Existing
-datasets and exclusion configurations remain unchanged; curated_v3 has not
-been created. A future cumulative configuration incorporating the three approved
-exclusions would contain 19 exclusions and seven false-premise challenge
-candidates. The project owner authorized the next curation round after reviewing
-the project overview, then requested this Git checkpoint before generation.
-The next curation build is authorized but has not started.
+**Application status:** These decisions have been applied in the new
+`data/curation/squad_exclusions_v3.json`, containing 19 cumulative exclusions,
+17 approved retained IDs, and seven false-premise challenge candidates.
+Curated_v3 has been generated with 17 unchanged approved records and three new
+unanswerable candidates. Original, v1, v2, and prior exclusion artifacts remain
+unchanged. The project owner authorized this round after the Git checkpoint.
+See [the v3 audit](curated_v3_audit.md) for verification and pending candidate
+adjudication. Earlier application-status notes above describe the state at
+the time each decision was recorded.

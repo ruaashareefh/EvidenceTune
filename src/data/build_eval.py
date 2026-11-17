@@ -697,7 +697,9 @@ def load_verified_parent(
             raise ValueError(f"Parent/baseline mismatch: {field}")
 
     curation = parent_manifest["curation"]
-    if curation.get("status") != "replacement_candidates_pending_review":
+    if curation.get("status") not in {
+        "replacement_candidates_pending_review", "approved_candidate_assembly",
+    }:
         raise ValueError("Unsupported parent curation status")
 
     expected_baseline_manifest_sha = sha256_file(
