@@ -1,0 +1,53 @@
+{
+  "approval_snapshot_sha256": "e28c78cc73b297d7bf00adc845b3a40c11297a47748ae5a0b540046345d273c7",
+  "blocked_contexts_sha256": "6a79884a92d8553fc9448169914f3ba7c4722f3ff5808064072b2bfdeca4b978",
+  "blocked_ids_sha256": "3e7ba574f6a438d427f1bc4aafae97a7abf51940a4367cefa551fac89332f0e3",
+  "candidate_ids": [
+    "squad_v2:5a58feb63e1742001a15cf31",
+    "squad_v2:5ad402ce604f3c001a3ffd67",
+    "squad_v2:5ad4c94f5b96ef001a10a09a",
+    "squad_v2:5a25ab1bef59cd001a623c33",
+    "squad_v2:5ad02ef677cf76001a686d6c",
+    "squad_v2:5a2c1397bfd06b001a5ae9cd",
+    "squad_v2:5a669ee5f038b7001ab0c06c",
+    "squad_v2:5a6cef5a4eec6b001a80a6fd",
+    "squad_v2:5acf9d3477cf76001a685516",
+    "squad_v2:5ad40b55604f3c001a3ffffb"
+  ],
+  "candidates_sha256": "654278fde7d66e29065a2cf656b8296105d962f901f91994e1bc03b5c9756576",
+  "category": "unanswerable",
+  "count": 10,
+  "dataset": "rajpurkar/squad_v2",
+  "format_version": 1,
+  "history": {
+    "baseline": {
+      "squad_dev.jsonl": "aef86cd90bb3a76c5b4052009d2d6715563fad1b0a34badc2011f1b81268fd57",
+      "squad_manifest.json": "3a4f129fd224c2d088c561e0a24c14e129adf8c9a54d77bc3558144892ae476b",
+      "squad_test.jsonl": "0c6f9b3c89104fc79ffcc26efa506df7541044e586d43b8efca57b3f8ce56e5b"
+    },
+    "curated_v1": {
+      "squad_dev.jsonl": "d3ba941cb769759a56281c38bcfa558c94d7269936585773055aeb1a91790004",
+      "squad_manifest.json": "83715a259ec902fe442f0113d2a1180ec4c1fa90dc8f2c913cdf866cdb261c63",
+      "squad_test.jsonl": "0c6f9b3c89104fc79ffcc26efa506df7541044e586d43b8efca57b3f8ce56e5b"
+    },
+    "curated_v2": {
+      "squad_dev.jsonl": "43a8db7a12fe4fb457930be04dfec4463623b75acaa62a856451c2b89a3ef4cb",
+      "squad_manifest.json": "850aeae3fc9ff24526dd7681e85c54fbb3f2b247f7e3857b56c641918f5c35bc",
+      "squad_test.jsonl": "0c6f9b3c89104fc79ffcc26efa506df7541044e586d43b8efca57b3f8ce56e5b"
+    },
+    "curated_v3": {
+      "squad_dev.jsonl": "6a8611b4d649d7afeac250570b3421a826d5aa94c06af1643f85bf4307edf429",
+      "squad_manifest.json": "76c9d4a9620e3f1c3a41a602b1a78cc5f2ea56fbf7eefecf04bf9ee1aba268f8",
+      "squad_test.jsonl": "0c6f9b3c89104fc79ffcc26efa506df7541044e586d43b8efca57b3f8ce56e5b"
+    }
+  },
+  "initial_review_status": "unreviewed",
+  "parent_version": "curated_v3",
+  "policy": "sha256-article-record-v1",
+  "previous_pools": {},
+  "review_log": "reviews.jsonl",
+  "seed": 42,
+  "source_fingerprint": "e84a5d9936b40ddb",
+  "source_revision": "3ffb306f725f7d2ce8394bc1873b24868140c412",
+  "source_split": "validation"
+}

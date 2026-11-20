@@ -1,0 +1,26 @@
+
+{
+  "version": "1.0",
+  "dataset": "rajpurkar/squad_v2",
+  "source_revision": "3ffb306f725f7d2ce8394bc1873b24868140c412",
+  "guideline_version": "0.2",
+  "review_status": "project_owner_approved",
+  "independent_double_review": false,
+  "excluded_ids": {
+    "squad_v2:5ad27697d7d075001a42951b": "Ambiguous question; kinetic friction appears to answer it.",
+    "squad_v2:5a57fe29770dc0001aeeff1b": "Ambiguous reference to lower Grand Canyon rocks.",
+    "squad_v2:5a25d89aef59cd001a623cf8": "Malformed question with unclear requested relationship.",
+    "squad_v2:56dde1d966d3e219004dad8d": "Reference answer requires unsupported inference.",
+    "squad_v2:5ad3ad61604f3c001a3fec0d": "False premise; chronology is reversed.",
+    "squad_v2:5acf808877cf76001a685004": "False premise; incorrect presidential ordinal.",
+    "squad_v2:5ad03c7377cf76001a686ebc": "False premise; incorrect earthquake damage amount.",
+    "squad_v2:57306797396df919000960f1": "Incorrect reference answer; formal imperialism is more costly.",
+    "squad_v2:5ad26d27d7d075001a4293c2": "Ambiguous geographic question.",
+    "squad_v2:5a8917433b2508001a72a4b2": "Malformed question using incorrect mathematical terminology."
+  },
+  "false_premise_challenge_candidates": [
+    "squad_v2:5ad3ad61604f3c001a3fec0d",
+    "squad_v2:5acf808877cf76001a685004",
+    "squad_v2:5ad03c7377cf76001a686ebc"
+  ]
+}

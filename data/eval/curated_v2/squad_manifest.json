@@ -1,0 +1,96 @@
+{
+  "curation": {
+    "approval_status": "project_owner_approved",
+    "baseline_dev_sha256": "aef86cd90bb3a76c5b4052009d2d6715563fad1b0a34badc2011f1b81268fd57",
+    "baseline_manifest_sha256": "3a4f129fd224c2d088c561e0a24c14e129adf8c9a54d77bc3558144892ae476b",
+    "baseline_test_sha256": "0c6f9b3c89104fc79ffcc26efa506df7541044e586d43b8efca57b3f8ce56e5b",
+    "excluded_count": 16,
+    "excluded_ids": [
+      "squad_v2:56dde1d966d3e219004dad8d",
+      "squad_v2:57306797396df919000960f1",
+      "squad_v2:5a25d89aef59cd001a623cf8",
+      "squad_v2:5a25f6a3c93d92001a400368",
+      "squad_v2:5a550c52134fea001a0e1858",
+      "squad_v2:5a57fe29770dc0001aeeff1b",
+      "squad_v2:5a8917433b2508001a72a4b2",
+      "squad_v2:5acf808877cf76001a685004",
+      "squad_v2:5acf9a5277cf76001a685420",
+      "squad_v2:5ad0301577cf76001a686db8",
+      "squad_v2:5ad03c7377cf76001a686ebc",
+      "squad_v2:5ad26d27d7d075001a4293c2",
+      "squad_v2:5ad27697d7d075001a42951b",
+      "squad_v2:5ad277d3d7d075001a429549",
+      "squad_v2:5ad3ad61604f3c001a3fec0d",
+      "squad_v2:5ad40358604f3c001a3ffd7e"
+    ],
+    "exclusion_file_sha256": "09f39141ed20460189680e65d6b259e507b6a11142e5958f5e3d4b9a86afd176",
+    "guideline_version": "0.2",
+    "independent_double_review": false,
+    "newly_excluded_count": 6,
+    "newly_excluded_ids": [
+      "squad_v2:5a25f6a3c93d92001a400368",
+      "squad_v2:5a550c52134fea001a0e1858",
+      "squad_v2:5acf9a5277cf76001a685420",
+      "squad_v2:5ad0301577cf76001a686db8",
+      "squad_v2:5ad277d3d7d075001a429549",
+      "squad_v2:5ad40358604f3c001a3ffd7e"
+    ],
+    "parent_dev_sha256": "d3ba941cb769759a56281c38bcfa558c94d7269936585773055aeb1a91790004",
+    "parent_manifest_sha256": "83715a259ec902fe442f0113d2a1180ec4c1fa90dc8f2c913cdf866cdb261c63",
+    "parent_version": "curated_v1",
+    "replacement_count": 6,
+    "replacement_ids": [
+      "squad_v2:5ad27f01d7d075001a429745",
+      "squad_v2:5a5812f9770dc0001aeeffd2",
+      "squad_v2:5a23565482b03a001a4aa78f",
+      "squad_v2:5ad3e96b604f3c001a3ff68b",
+      "squad_v2:5acf9b1177cf76001a685444",
+      "squad_v2:5a550e6f134fea001a0e1880"
+    ],
+    "retained_dev_count": 14,
+    "retained_dev_ids": [
+      "squad_v2:57377aac1c4567190057447d",
+      "squad_v2:57266193dd62a815002e832e",
+      "squad_v2:572756fe708984140094dc74",
+      "squad_v2:572861cc4b864d1900164960",
+      "squad_v2:57263c78ec44d21400f3dc7b",
+      "squad_v2:5a66797c846392001a1e1c49",
+      "squad_v2:570611c475f01819005e793c",
+      "squad_v2:5ad031ef77cf76001a686df6",
+      "squad_v2:57300a25a23a5019007fcc9b",
+      "squad_v2:572991943f37b319004784a2",
+      "squad_v2:57377ec7c3c5551400e51f08",
+      "squad_v2:572665ff708984140094c4c3",
+      "squad_v2:5a5808ef770dc0001aeeff67",
+      "squad_v2:5ad0206677cf76001a686afd"
+    ],
+    "status": "replacement_candidates_pending_review",
+    "test_preserved_byte_for_byte": true
+  },
+  "dataset": "rajpurkar/squad_v2",
+  "grouping_strategy": "article_title",
+  "per_category_per_split": 10,
+  "seed": 42,
+  "source_revision": "3ffb306f725f7d2ce8394bc1873b24868140c412",
+  "source_split": "validation",
+  "splits": {
+    "dev": {
+      "categories": {
+        "answerable": 10,
+        "unanswerable": 10
+      },
+      "count": 20,
+      "review_status": "pending_replacement_audit",
+      "sha256": "43a8db7a12fe4fb457930be04dfec4463623b75acaa62a856451c2b89a3ef4cb"
+    },
+    "test": {
+      "categories": {
+        "answerable": 10,
+        "unanswerable": 10
+      },
+      "count": 20,
+      "review_status": "unchanged_not_yet_audited",
+      "sha256": "0c6f9b3c89104fc79ffcc26efa506df7541044e586d43b8efca57b3f8ce56e5b"
+    }
+  }
+}
