@@ -1,0 +1,5 @@
+{"example_id":"squad_v2:57377aac1c4567190057447d","predicted_abstain":false,"answer_correct":true,"grounded":true,"notes":"Correctly identifies force."}
+{"example_id":"squad_v2:57266193dd62a815002e832e","predicted_abstain":false,"answer_correct":true,"grounded":true,"notes":"Correctly identifies wave speeds."}
+{"example_id":"squad_v2:572756fe708984140094dc74","predicted_abstain":false,"answer_correct":true,"grounded":true,"notes":"Correctly identifies the supported construction safety measures."}
+{"example_id":"squad_v2:5a66797c846392001a1e1c49","predicted_abstain":false,"answer_correct":false,"grounded":false,"notes":"The passage does not establish a specific delivery method for the absence of a shared physical medium."}
+{"example_id":"squad_v2:5ad031ef77cf76001a686df6","predicted_abstain":false,"answer_correct":false,"grounded":false,"notes":"The question asks about England but the context discusses France."}
