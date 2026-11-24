@@ -1,0 +1,3800 @@
+{
+  "annotation_screening": [
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000000",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000001",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000002",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000003",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000004",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000005",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000006",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000007",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000008",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000009",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000010",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000011",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000012",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000013",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000014",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000015",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000016",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000017",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000019",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000020",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000021",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000022",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000023",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000024",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000025",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000026",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000027",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000028",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000029",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000030",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000031",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000032",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000033",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000034",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000035",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000036",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000037",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000038",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000039",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000040",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000041",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000042",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000043",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000044",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000045",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000046",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000047",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000049",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000050",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000051",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000052",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000053",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000055",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000056",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000057",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000058",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000059",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000060",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000062",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000063",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000064",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000065",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000066",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000067",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000068",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000069",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000070",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000071",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000072",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000073",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000075",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000076",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000078",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000079",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000080",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000081",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000082",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000083",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000084",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000085",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000086",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000087",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000088",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000089",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000090",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000091",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000093",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000094",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000095",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000096",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000097",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000099",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000100",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000101",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000102",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000103",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000104",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000105",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000106",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000107",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000108",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000109",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000110",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000111",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000112",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000113",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000115",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000117",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000118",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000119",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000120",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000121",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000123",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000124",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000125",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000126",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000127",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000128",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000129",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000130",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000131",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000132",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000133",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000134",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000135",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000136",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000138",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000139",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000140",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000141",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000142",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000143",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000144",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000145",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000146",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000147",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000148",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000149",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000150",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000151",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000152",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000153",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000154",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000155",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000156",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000157",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000159",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000160",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000161",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000162",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000163",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000164",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000165",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000166",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000167",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000168",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000169",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000170",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000171",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000172",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000173",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000174",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000175",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000176",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000177",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000178",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000179",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000180",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000181",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000182",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000183",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000184",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000185",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000186",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000187",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000188",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000189",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000190",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000191",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000192",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000193",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000194",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000195",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000196",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000197",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000198",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000199",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000200",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000201",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000202",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000203",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000205",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000206",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000207",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000208",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000209",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000210",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000211",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000213",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000214",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000215",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000216",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000217",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000218",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000219",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000220",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000221",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000222",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000223",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000224",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000225",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000226",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000227",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000228",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000229",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000230",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000231",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000232",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000234",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000235",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000236",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000237",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000238",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000239",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000240",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000241",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000242",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000243",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000244",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000245",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000246",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000247",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000248",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000249",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000250",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000251",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000252",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000254",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000255",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000256",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000257",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000258",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000259",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000260",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000261",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000263",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000264",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000265",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000266",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000267",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000268",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000269",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000271",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000272",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000273",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000274",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000275",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000276",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000277",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000278",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000279",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000280",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000281",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000282",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000283",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000284",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000285",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000286",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000287",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000288",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000289",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000290",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000291",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000292",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000294",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000295",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000296",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000297",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000298",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000299",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000300",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000301",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000302",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000303",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000304",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000306",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000307",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000308",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000309",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000310",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000311",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000312",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000313",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000314",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000315",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000316",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000317",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000318",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000319",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000320",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000321",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000322",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000323",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000324",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000325",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000327",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000328",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000329",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000330",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000332",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000333",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000334",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000336",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000337",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000338",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000339",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000340",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000341",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000343",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000344",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000345",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000346",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000348",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000349",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000350",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000351",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000352",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000353",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000354",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000355",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000356",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000357",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000358",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000359",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000361",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000362",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000365",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000366",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000367",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000368",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000369",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000370",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000371",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000372",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000373",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000374",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000375",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000376",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000377",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000378",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000379",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000381",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000382",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000383",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000384",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000385",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000386",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000387",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000388",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000389",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000390",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000391",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000392",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000393",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000394",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000395",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000396",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000397",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000398",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    },
+    {
+      "example_id": "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000399",
+      "interpretation": "screening flag only; paraphrased references may be valid",
+      "issue": "reference_not_normalized_substring"
+    }
+  ],
+  "exact_context": {
+    "across": [
+      {
+        "left": "repliqa/answerable_val",
+        "left_records": 34,
+        "matching_groups": 33,
+        "matching_pairs": 35,
+        "right": "repliqa/unanswerable_val",
+        "right_records": 34
+      },
+      {
+        "left": "squad/answerable_val",
+        "left_records": 7,
+        "matching_groups": 7,
+        "matching_pairs": 7,
+        "right": "squad/unanswerable_val",
+        "right_records": 7
+      }
+    ],
+    "groups": [
+      {
+        "match_sha256": "36ac0f57d822ed832a133e1d148a71890a602890ae405c01bfb9bb09ea8ec2f7",
+        "members": {
+          "repliqa/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000184",
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000385"
+          ]
+        }
+      },
+      {
+        "match_sha256": "1ddef23e615d030b11493ef8d3ba99518e199a1e53afe331db809229a41bd27f",
+        "members": {
+          "squad/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:squad:val:unanswerable:000102",
+            "lavi2026:9ea9afbd2aa0:squad:val:unanswerable:000148"
+          ]
+        }
+      },
+      {
+        "match_sha256": "a75cc79b9d686008aafc841f59e5ec0113ad937373b79ca3d1cc963dec2b49c7",
+        "members": {
+          "repliqa/answerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000146"
+          ],
+          "repliqa/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000179"
+          ]
+        }
+      },
+      {
+        "match_sha256": "f3d022bfcfe6dce5fe6551bd5bcca0fdc7b3fce3bb684e0ec3c1e6a090acc3c2",
+        "members": {
+          "repliqa/answerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000170"
+          ],
+          "repliqa/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000168"
+          ]
+        }
+      },
+      {
+        "match_sha256": "1b58d1140563d85e86080b1a11ad2b3adee6bae62bbecf799da8ccc73c72b65e",
+        "members": {
+          "repliqa/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000235",
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000399"
+          ]
+        }
+      },
+      {
+        "match_sha256": "1081f90c95a2e80b86b8023d107b5504920eeebc20bd82741d947bb366575971",
+        "members": {
+          "repliqa/answerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000081",
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000274"
+          ]
+        }
+      },
+      {
+        "match_sha256": "033fc006a3ebccfe864270ceb6889335d9877c62e2fdbdcf3dd42dbfceb255a4",
+        "members": {
+          "repliqa/answerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000130"
+          ],
+          "repliqa/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000117"
+          ]
+        }
+      },
+      {
+        "match_sha256": "93e04f37d52b8ac94195540fb461f397e4ec9c24114b069647c1acacbcd7ab58",
+        "members": {
+          "repliqa/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000028",
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000034",
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000076"
+          ]
+        }
+      },
+      {
+        "match_sha256": "574e062ff6e06ffd522e55a3ee603f0fe79fb363a49a92ad42466cdbabb709dd",
+        "members": {
+          "repliqa/answerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000223",
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000313"
+          ]
+        }
+      },
+      {
+        "match_sha256": "ae83a2af1046fbe9a2db1de2d4d3204abfd7d4201f16e157a2f83889fc49c6d3",
+        "members": {
+          "squad/answerable_val": [
+            "lavi2026:9ea9afbd2aa0:squad:val:answerable:000232"
+          ],
+          "squad/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:squad:val:unanswerable:000116"
+          ]
+        }
+      },
+      {
+        "match_sha256": "11e9ae95af16970999e73b709059e5f0f91e97fd4bbaaca8df7e53383025df72",
+        "members": {
+          "repliqa/answerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000219"
+          ],
+          "repliqa/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000389"
+          ]
+        }
+      },
+      {
+        "match_sha256": "8b8b9e8c4c5a0d9039184ad860241f92fef3901c7cbf802b445d52c6d3cb3a34",
+        "members": {
+          "repliqa/answerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000031",
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000184"
+          ]
+        }
+      },
+      {
+        "match_sha256": "ba36d181c3135ba1bf25e6b35b61de039aeb0614d9058731f718a1d92b2ceca5",
+        "members": {
+          "repliqa/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000008",
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000119"
+          ]
+        }
+      },
+      {
+        "match_sha256": "8db91b7278df09e246cdbb4e79141c66ef7131068d948e736545026b29c5647d",
+        "members": {
+          "repliqa/answerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000050",
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000298"
+          ]
+        }
+      },
+      {
+        "match_sha256": "e51b7e8f450d6b9c7b2361756c3d246de1e4a986ea744bc69f28490392e4643c",
+        "members": {
+          "repliqa/answerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000265"
+          ],
+          "repliqa/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000266"
+          ]
+        }
+      },
+      {
+        "match_sha256": "fe785370bcab6a99b37777ae95a6a3ed57f016d802459bc06ef108e0673aea6c",
+        "members": {
+          "repliqa/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000064",
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000196"
+          ]
+        }
+      },
+      {
+        "match_sha256": "a7c7f5a01a8f6ab5530acd1c502229c3c3782403d882529c34004824e10e22cc",
+        "members": {
+          "repliqa/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000071",
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000295"
+          ]
+        }
+      },
+      {
+        "match_sha256": "a4fc585eae84ceae7b33b88ece6f9b63d4e20a6a97b8cab9074880003c8fe6dc",
+        "members": {
+          "repliqa/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000078",
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000236"
+          ]
+        }
+      },
+      {
+        "match_sha256": "ad53a05e1fe6f85383691226176ac8aef79cc17eda69cf3f47ed366f1e1a4398",
+        "members": {
+          "repliqa/answerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000074"
+          ],
+          "repliqa/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000337"
+          ]
+        }
+      },
+      {
+        "match_sha256": "c093ff45b8b9d44978542c01f980297bd3f81b8178e55f780b303482d280eeb0",
+        "members": {
+          "squad/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:squad:val:unanswerable:000003",
+            "lavi2026:9ea9afbd2aa0:squad:val:unanswerable:000374"
+          ]
+        }
+      },
+      {
+        "match_sha256": "bf80ddb888cc1c850564c9f9faa82b0ef8625b6fd8f3fd871fa758375faab584",
+        "members": {
+          "repliqa/answerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000113",
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000332"
+          ]
+        }
+      },
+      {
+        "match_sha256": "bfb59b999982f0fabaec1d364967eff6ab5696c5ebaaf2a91eacf1c5b50bc08f",
+        "members": {
+          "repliqa/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000108",
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000211"
+          ]
+        }
+      },
+      {
+        "match_sha256": "ef913d9aa820da16b682a74b409679b3c44b0eb8150e5a28e2acdf54589fc62d",
+        "members": {
+          "repliqa/answerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000102"
+          ],
+          "repliqa/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000058"
+          ]
+        }
+      },
+      {
+        "match_sha256": "215de71f11e8024509bbfde402443374f45b45ae97ebcd88556197641f02927b",
+        "members": {
+          "repliqa/answerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000263"
+          ],
+          "repliqa/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000270"
+          ]
+        }
+      },
+      {
+        "match_sha256": "2ba3aa42f19d4e2a5453571b819f7bea482c46e989e5a2c3649f3b433024d46c",
+        "members": {
+          "repliqa/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000152",
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000345"
+          ]
+        }
+      },
+      {
+        "match_sha256": "1cc5190f12768e1635a9ea2fc2f72feab3abf72b2d8b3fe3cd66563ad4df0efb",
+        "members": {
+          "repliqa/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000080",
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000118"
+          ]
+        }
+      },
+      {
+        "match_sha256": "84d9d103176b9ce661d099ea4ada3b80e493a0a9147cf3d351c2cb6eb2e3df5c",
+        "members": {
+          "repliqa/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000186",
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000325"
+          ]
+        }
+      },
+      {
+        "match_sha256": "f3d303dda925cf6eb91ccef3831d3133ed360d7105d50d905faf68f12a58e0ea",
+        "members": {
+          "repliqa/answerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000165",
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000231"
+          ]
+        }
+      },
+      {
+        "match_sha256": "900d0d222b01a000175392cb18e1b52f1506f2e07482342feb606763549ea702",
+        "members": {
+          "repliqa/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000284",
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000360"
+          ]
+        }
+      },
+      {
+        "match_sha256": "61e8201071bdb7b1577dde0b7e234deefa73533513f776a49f94d0b76d314bc4",
+        "members": {
+          "repliqa/answerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000188",
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000297"
+          ],
+          "repliqa/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000311"
+          ]
+        }
+      },
+      {
+        "match_sha256": "4c20c28d5e9344d416db3347bd770774d3eddbe67a6e6bb9d934186c1ac9d955",
+        "members": {
+          "repliqa/answerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000049"
+          ],
+          "repliqa/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000091"
+          ]
+        }
+      },
+      {
+        "match_sha256": "90d1a91da1eb5be8291d47d9cc95e86817f9e7a41a63819343fa50df7b465bf9",
+        "members": {
+          "repliqa/answerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000311"
+          ],
+          "repliqa/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000075"
+          ]
+        }
+      },
+      {
+        "match_sha256": "d95b3fa862e4ebcd63e25b08853a01dc54745ce390a269288ac858788b0236a7",
+        "members": {
+          "squad/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:squad:val:unanswerable:000278",
+            "lavi2026:9ea9afbd2aa0:squad:val:unanswerable:000377"
+          ]
+        }
+      },
+      {
+        "match_sha256": "462d12d93be95dc9f298d584777812c42684b4add2b45ecba20c817e1c5b7ffe",
+        "members": {
+          "repliqa/answerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000285"
+          ],
+          "repliqa/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000368"
+          ]
+        }
+      },
+      {
+        "match_sha256": "9a002e98a344ee158b90566958b6a5701d020c8a8587e36137b3295d98902755",
+        "members": {
+          "repliqa/answerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000397"
+          ],
+          "repliqa/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000321"
+          ]
+        }
+      },
+      {
+        "match_sha256": "1818ebd3c66d0676b786f74025ee4d85aef954894e67c852f11e40cd41c2c776",
+        "members": {
+          "repliqa/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000227",
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000228"
+          ]
+        }
+      },
+      {
+        "match_sha256": "bd6952f5b2cdd86f7df19030a9722d93021eacd65bfd8c22056fafd32b2296b8",
+        "members": {
+          "repliqa/answerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000177",
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000337"
+          ]
+        }
+      },
+      {
+        "match_sha256": "e67511da59dcfa9d7932174e6ca9f8de684f4667f4eecaf403600ae31eb8bf9f",
+        "members": {
+          "repliqa/answerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000131"
+          ],
+          "repliqa/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000382"
+          ]
+        }
+      },
+      {
+        "match_sha256": "c40eb87c1d1818bc891e36c58b9d3019895b56cdf8cfbf55072de29d5c9d1c28",
+        "members": {
+          "repliqa/answerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000002",
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000218"
+          ]
+        }
+      },
+      {
+        "match_sha256": "ced6d3cd840d9824e2e2ad93e402c11845f1d3abba7535f5d27f9241bec79de8",
+        "members": {
+          "repliqa/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000225",
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000283"
+          ]
+        }
+      },
+      {
+        "match_sha256": "084f7afe27e292bea839d804d7db9ffb2b07e7b5f6524b15be2a0592d61377d6",
+        "members": {
+          "repliqa/answerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000047",
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000391"
+          ]
+        }
+      },
+      {
+        "match_sha256": "9964d00f290cd77a34e51174dea0a62c9cdd1a7d9f5ffa737b3dc32657a20964",
+        "members": {
+          "repliqa/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000009",
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000381"
+          ]
+        }
+      },
+      {
+        "match_sha256": "645365aa6d3cc1794eab0d5628a368afc1bd9867f8458901bd1cf0f24ef2e642",
+        "members": {
+          "repliqa/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000085",
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000279"
+          ]
+        }
+      },
+      {
+        "match_sha256": "2b03259e7ee9fb7b1c733a3dccb85cb8723341fbbf7542f213a23985a605864b",
+        "members": {
+          "repliqa/answerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000094"
+          ],
+          "repliqa/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000103"
+          ]
+        }
+      },
+      {
+        "match_sha256": "991bc95935e3b568d7be28551064054bb232a956f35810126d121f33bd719ee6",
+        "members": {
+          "squad/answerable_val": [
+            "lavi2026:9ea9afbd2aa0:squad:val:answerable:000123"
+          ],
+          "squad/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:squad:val:unanswerable:000334"
+          ]
+        }
+      },
+      {
+        "match_sha256": "b2bb9b58531637aa4dc7fc1c11f23b4ed98848ce2ffdef083f9a9d70a7cd9202",
+        "members": {
+          "repliqa/answerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000112",
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000366"
+          ]
+        }
+      },
+      {
+        "match_sha256": "7db7058d8de820ce05d89d20154dfd6723d4031529ec93d6493ecbacce18f868",
+        "members": {
+          "repliqa/answerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000006"
+          ],
+          "repliqa/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000322"
+          ]
+        }
+      },
+      {
+        "match_sha256": "c7c623715542c7aef9926b54da9357f12eac0af34efc096c737d4ed461be1b87",
+        "members": {
+          "squad/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:squad:val:unanswerable:000150",
+            "lavi2026:9ea9afbd2aa0:squad:val:unanswerable:000174"
+          ]
+        }
+      },
+      {
+        "match_sha256": "fb610fc43039cdbb29d3edbffae9997955bad42ec9fbee8367766ef567cd3de3",
+        "members": {
+          "squad/answerable_val": [
+            "lavi2026:9ea9afbd2aa0:squad:val:answerable:000364"
+          ],
+          "squad/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:squad:val:unanswerable:000043"
+          ]
+        }
+      },
+      {
+        "match_sha256": "185362e55332a997cdc6a5101fef23dc5888bcb5147f3e46c61d17e3214bac81",
+        "members": {
+          "squad/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:squad:val:unanswerable:000194",
+            "lavi2026:9ea9afbd2aa0:squad:val:unanswerable:000274"
+          ]
+        }
+      },
+      {
+        "match_sha256": "c96f0ed95607618ea232a0188e5a3c079c2209708bc205ca341dfba5cb734288",
+        "members": {
+          "repliqa/answerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000167"
+          ],
+          "repliqa/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000155"
+          ]
+        }
+      },
+      {
+        "match_sha256": "855f3a0ca5242e3c5653618a3a2bb89fb4a3598fd3d1f60e44255def52799a83",
+        "members": {
+          "squad/answerable_val": [
+            "lavi2026:9ea9afbd2aa0:squad:val:answerable:000279"
+          ],
+          "squad/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:squad:val:unanswerable:000008"
+          ]
+        }
+      },
+      {
+        "match_sha256": "bdbe2e97c1c3cd480392f361d841164ebc622c88038a96224870566e9cb71d31",
+        "members": {
+          "squad/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:squad:val:unanswerable:000137",
+            "lavi2026:9ea9afbd2aa0:squad:val:unanswerable:000225"
+          ]
+        }
+      },
+      {
+        "match_sha256": "ef3f3bf480c1169292cd4874875f47d3f0483407c53677f3f7fbc0b1b0804bc1",
+        "members": {
+          "squad/answerable_val": [
+            "lavi2026:9ea9afbd2aa0:squad:val:answerable:000337"
+          ],
+          "squad/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:squad:val:unanswerable:000152"
+          ]
+        }
+      },
+      {
+        "match_sha256": "0c2fe2becb67a3d0c388b53799425e62b4a974cf133fdff7edbcb5931cb52a51",
+        "members": {
+          "repliqa/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000047",
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000135"
+          ]
+        }
+      },
+      {
+        "match_sha256": "56f900a076c6ddfa6d563f1779dc7656547976285886d5bfa704269e5903d32f",
+        "members": {
+          "squad/answerable_val": [
+            "lavi2026:9ea9afbd2aa0:squad:val:answerable:000246"
+          ],
+          "squad/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:squad:val:unanswerable:000241"
+          ]
+        }
+      },
+      {
+        "match_sha256": "54668ced972499f3cd328c5e61b95ee333842208e801f2526fb35e56e0a17c18",
+        "members": {
+          "repliqa/answerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000370"
+          ],
+          "repliqa/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000095"
+          ]
+        }
+      },
+      {
+        "match_sha256": "f214871c3d3c0a45313fa58276a3d6aea32d385e016850ba688c81b5fa08bd4a",
+        "members": {
+          "repliqa/answerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000341"
+          ],
+          "repliqa/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000355"
+          ]
+        }
+      },
+      {
+        "match_sha256": "a8a4406b4b0b1e6a60b1cf15c2b218ecb62125d57775b455a56789ab5a13cf2f",
+        "members": {
+          "repliqa/answerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000278",
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000359"
+          ]
+        }
+      },
+      {
+        "match_sha256": "3e3c021ed46c45ac8bbe03e2f514f4bd12598867fbbbe550d6963056f15bcc55",
+        "members": {
+          "repliqa/answerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000151"
+          ],
+          "repliqa/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000035",
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000195"
+          ]
+        }
+      },
+      {
+        "match_sha256": "f43365d739db9a4caad02d94a95843e306629b528a829037a48bb95f67cbcabd",
+        "members": {
+          "repliqa/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000023",
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000313"
+          ]
+        }
+      },
+      {
+        "match_sha256": "bac631bea7adf415ce42be6be22604d22945946bbcd6ad6a673b1bd0ad3547ac",
+        "members": {
+          "repliqa/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000065",
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000315"
+          ]
+        }
+      },
+      {
+        "match_sha256": "1a2a839664836bf8615227c0abcc2520d159aad0736f1e9d27cb43724cd95563",
+        "members": {
+          "repliqa/answerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000035"
+          ],
+          "repliqa/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000181"
+          ]
+        }
+      },
+      {
+        "match_sha256": "f6ef196f05925db8da9c90ce2a0ecb19bf93fdd0cef12462caf875009e30b7d9",
+        "members": {
+          "repliqa/answerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000004",
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000357"
+          ]
+        }
+      },
+      {
+        "match_sha256": "f1eb1796f105046d902eaadd07ae4832ac2f8a0b736e8605f875f689f17bc0da",
+        "members": {
+          "repliqa/answerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000133"
+          ],
+          "repliqa/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000183"
+          ]
+        }
+      },
+      {
+        "match_sha256": "0edde8fb0dc3b44b30cf569797113b023d3dab35a3d7883c14fb7eda3e4e3ff1",
+        "members": {
+          "repliqa/answerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000198"
+          ],
+          "repliqa/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000246"
+          ]
+        }
+      },
+      {
+        "match_sha256": "496446074004fadc7a3cd9cf1ee554c2be17723cd4cb86e1d54be4f2d3263742",
+        "members": {
+          "repliqa/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000115",
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000290"
+          ]
+        }
+      },
+      {
+        "match_sha256": "f46e417f6aea58f2a664d6b1575e539565ab6c9a12de0bd42e5fdef8197fd944",
+        "members": {
+          "repliqa/answerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000149",
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000234"
+          ]
+        }
+      },
+      {
+        "match_sha256": "8b9990d42d76e8a2d8a275f76f16a12a4d30e44d14249fcf51ba4a8742e2b28b",
+        "members": {
+          "repliqa/answerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000101"
+          ],
+          "repliqa/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000249"
+          ]
+        }
+      },
+      {
+        "match_sha256": "c78faed567b82613acfb1bdabda1ec168691914b8b25019a9ae4af2276bfc2e2",
+        "members": {
+          "repliqa/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000031",
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000132"
+          ]
+        }
+      },
+      {
+        "match_sha256": "c9f1892ab68fe214fb12ad38b5273a5cba4a832be68c1b77ed07ced43e217737",
+        "members": {
+          "repliqa/answerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000290"
+          ],
+          "repliqa/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000323"
+          ]
+        }
+      },
+      {
+        "match_sha256": "ab5317dab80a89519e9d32795ff1fd1108514c209d18bfccacfa0481db44357d",
+        "members": {
+          "repliqa/answerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000053",
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000245"
+          ]
+        }
+      },
+      {
+        "match_sha256": "fcef94ac54f22365be4a8f6a7c2d1a4c68daacf59d9df23fa589989bb96cbe60",
+        "members": {
+          "repliqa/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000248",
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000309"
+          ]
+        }
+      },
+      {
+        "match_sha256": "9e19209829446b4f5c181a555a0a30394323f2070400f26b6c91cca2d60d21dd",
+        "members": {
+          "repliqa/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000268",
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000363"
+          ]
+        }
+      },
+      {
+        "match_sha256": "4e7be88931fdfa4f08048fc4b271f261cece282e4bac1117a550363ceda7e0c5",
+        "members": {
+          "repliqa/answerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000194"
+          ],
+          "repliqa/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000275"
+          ]
+        }
+      },
+      {
+        "match_sha256": "e8151c27c5d10d082b439c56268b6266e7770b690945ca492be4ad36b1e76feb",
+        "members": {
+          "repliqa/answerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000387"
+          ],
+          "repliqa/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000004"
+          ]
+        }
+      },
+      {
+        "match_sha256": "ffbc86b8e226874d5509d4731be12c15f52f5b4a3bfdd9863d4ca5678ed7cd34",
+        "members": {
+          "repliqa/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000056",
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000197"
+          ]
+        }
+      },
+      {
+        "match_sha256": "d03062f8173d3fe1f02ebfe8bd79eca25ee8b069139a653a35bde65f06d23022",
+        "members": {
+          "repliqa/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000282",
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000379"
+          ]
+        }
+      },
+      {
+        "match_sha256": "658e1afc3491ab8450eee09c7397ca653cedc899762e18d6707549a2b41c27e5",
+        "members": {
+          "repliqa/answerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000178"
+          ],
+          "repliqa/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000242"
+          ]
+        }
+      },
+      {
+        "match_sha256": "e1087b3df3e3dfb53e43563f6547f3916aaf1d1a797743605a80697ba80e5fde",
+        "members": {
+          "repliqa/answerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000279"
+          ],
+          "repliqa/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000019"
+          ]
+        }
+      },
+      {
+        "match_sha256": "f48913bcbb5fc377bb844acd031675666079c73b0c6325109b3c5633a5469be6",
+        "members": {
+          "repliqa/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000055",
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000113"
+          ]
+        }
+      },
+      {
+        "match_sha256": "2bcebd83ee3c0817c1ceb306f7e9f3b651d6c913a95469689c0c2ba9fda7969b",
+        "members": {
+          "repliqa/answerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000250",
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000344"
+          ]
+        }
+      },
+      {
+        "match_sha256": "5cb9a0a5af4b2ed220eaa016f9d7fa604e08faeee5fa8cab82a513db3bc3a449",
+        "members": {
+          "squad/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:squad:val:unanswerable:000184",
+            "lavi2026:9ea9afbd2aa0:squad:val:unanswerable:000279"
+          ]
+        }
+      },
+      {
+        "match_sha256": "14228e2c958390effbe2606ad875b94cb3651257e259413d96bb50c717ea644e",
+        "members": {
+          "repliqa/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000066",
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000131"
+          ]
+        }
+      },
+      {
+        "match_sha256": "25a1e802e3f6b533b5c7c33180e113b431c1bb88ca2e6539153df7a10700e317",
+        "members": {
+          "squad/answerable_val": [
+            "lavi2026:9ea9afbd2aa0:squad:val:answerable:000089",
+            "lavi2026:9ea9afbd2aa0:squad:val:answerable:000207"
+          ]
+        }
+      },
+      {
+        "match_sha256": "ece6600d098a3ba46c842063fe6fde502bfeb9a29a081159df8663750e34d591",
+        "members": {
+          "squad/answerable_val": [
+            "lavi2026:9ea9afbd2aa0:squad:val:answerable:000343"
+          ],
+          "squad/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:squad:val:unanswerable:000100"
+          ]
+        }
+      },
+      {
+        "match_sha256": "ac3eaa58f9f92efd26353ccaaf0c71712fed48a73a6fc6c5e58e8a05b1a15456",
+        "members": {
+          "repliqa/answerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000312"
+          ],
+          "repliqa/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000121"
+          ]
+        }
+      },
+      {
+        "match_sha256": "a002bafaa42df0e4f6bb86e690a60026781cbaea95975190c31ea80d05a326fb",
+        "members": {
+          "repliqa/answerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000168",
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000264"
+          ]
+        }
+      },
+      {
+        "match_sha256": "c888b6622d9d77c75376b53bed122289bf60289cab2db7a8222e124cf92e1150",
+        "members": {
+          "repliqa/answerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000134"
+          ],
+          "repliqa/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000231"
+          ]
+        }
+      },
+      {
+        "match_sha256": "a57b508ff46cbb349c15ba8d12605be75c5d189d1a7e06e32d04460afb91da1b",
+        "members": {
+          "repliqa/answerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000280"
+          ],
+          "repliqa/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000005"
+          ]
+        }
+      },
+      {
+        "match_sha256": "29ccd58b06ec4a48a0e9b0cb045f8da1703e4376b6983ada7dcfec181086ceb2",
+        "members": {
+          "squad/answerable_val": [
+            "lavi2026:9ea9afbd2aa0:squad:val:answerable:000144",
+            "lavi2026:9ea9afbd2aa0:squad:val:answerable:000197"
+          ]
+        }
+      },
+      {
+        "match_sha256": "bd47be7131125408475b28660b3daac288f2a9b7cd4f51f612ffae729078e085",
+        "members": {
+          "squad/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:squad:val:unanswerable:000212",
+            "lavi2026:9ea9afbd2aa0:squad:val:unanswerable:000301"
+          ]
+        }
+      },
+      {
+        "match_sha256": "ba4da8ededf97ffeb65a975d6782445cbbe0adf707d9f527c9c8e448516f6dd1",
+        "members": {
+          "repliqa/answerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000092"
+          ],
+          "repliqa/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000394"
+          ]
+        }
+      }
+    ],
+    "within": {
+      "repliqa/answerable_val": {
+        "extra_records": 17,
+        "groups": 17,
+        "records": 34
+      },
+      "repliqa/unanswerable_val": {
+        "extra_records": 29,
+        "groups": 28,
+        "records": 57
+      },
+      "squad/answerable_val": {
+        "extra_records": 2,
+        "groups": 2,
+        "records": 4
+      },
+      "squad/unanswerable_val": {
+        "extra_records": 8,
+        "groups": 8,
+        "records": 16
+      }
+    }
+  },
+  "exact_context_question": {
+    "across": [],
+    "groups": [],
+    "within": {}
+  },
+  "exact_record": {
+    "across": [],
+    "groups": [],
+    "within": {}
+  },
+  "label_conflicts": [],
+  "normalization": "Unicode NFKC + casefold + whitespace collapse; punctuation retained",
+  "normalized_context": {
+    "across": [
+      {
+        "left": "repliqa/answerable_val",
+        "left_records": 34,
+        "matching_groups": 33,
+        "matching_pairs": 35,
+        "right": "repliqa/unanswerable_val",
+        "right_records": 34
+      },
+      {
+        "left": "squad/answerable_val",
+        "left_records": 7,
+        "matching_groups": 7,
+        "matching_pairs": 7,
+        "right": "squad/unanswerable_val",
+        "right_records": 7
+      }
+    ],
+    "groups": [
+      {
+        "match_sha256": "09ebcea1bab02f85e29d41805be41486a3b1db81044ff7f2940296b7f73e3320",
+        "members": {
+          "repliqa/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000184",
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000385"
+          ]
+        }
+      },
+      {
+        "match_sha256": "a00ca12255befb08fa8b1b7236e7633078d9147759b2bad90077062d070fc14e",
+        "members": {
+          "squad/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:squad:val:unanswerable:000102",
+            "lavi2026:9ea9afbd2aa0:squad:val:unanswerable:000148"
+          ]
+        }
+      },
+      {
+        "match_sha256": "044aada47de8eaab2e73f21ac7c83a800f5401c7625a38dc16ce8db75edaeaf9",
+        "members": {
+          "repliqa/answerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000146"
+          ],
+          "repliqa/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000179"
+          ]
+        }
+      },
+      {
+        "match_sha256": "54127af39aaec86f5392a861558f85f1c2a9b96464af21325f9ed00abc9538b4",
+        "members": {
+          "repliqa/answerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000170"
+          ],
+          "repliqa/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000168"
+          ]
+        }
+      },
+      {
+        "match_sha256": "a21ba60c07214b5b950fcae4dc705848593a40185b2c78e3c94f9850dce95422",
+        "members": {
+          "repliqa/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000235",
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000399"
+          ]
+        }
+      },
+      {
+        "match_sha256": "2f68438d4bd0feee0f204de48dee3b8774059c1154c4dc51c0aff6d624bbab78",
+        "members": {
+          "repliqa/answerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000081",
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000274"
+          ]
+        }
+      },
+      {
+        "match_sha256": "c9192e20d280364b0e388472a81481ca9ded053bf2b322aa7d7f9dc5369b87ba",
+        "members": {
+          "repliqa/answerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000130"
+          ],
+          "repliqa/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000117"
+          ]
+        }
+      },
+      {
+        "match_sha256": "6808185a8489796571ce8a6664cfc5c21e8529108969dde5411d54c25bd7479e",
+        "members": {
+          "repliqa/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000028",
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000034",
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000076"
+          ]
+        }
+      },
+      {
+        "match_sha256": "cd763ffca2258ec235bb664e3e1bbeb627ddd9bcffd48f16c973b9efe2190a43",
+        "members": {
+          "repliqa/answerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000223",
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000313"
+          ]
+        }
+      },
+      {
+        "match_sha256": "94a5cb3c502fc11962fa3989aa68fa9f47bf67c8df29780213e8aaa065b866d1",
+        "members": {
+          "squad/answerable_val": [
+            "lavi2026:9ea9afbd2aa0:squad:val:answerable:000232"
+          ],
+          "squad/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:squad:val:unanswerable:000116"
+          ]
+        }
+      },
+      {
+        "match_sha256": "16c83f2dda2bd9cfcc12a687dfe72461899ad4f9adaae2dfedd532a936903a86",
+        "members": {
+          "repliqa/answerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000219"
+          ],
+          "repliqa/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000389"
+          ]
+        }
+      },
+      {
+        "match_sha256": "103b3783abdf52bc059fab1ce489f981a280c78051ce05d5d9720e2c3f3fa65c",
+        "members": {
+          "repliqa/answerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000031",
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000184"
+          ]
+        }
+      },
+      {
+        "match_sha256": "fb941c768131b8bf671f115bbff136c3ec8775a56ef33f28fc8bef2627252e74",
+        "members": {
+          "repliqa/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000008",
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000119"
+          ]
+        }
+      },
+      {
+        "match_sha256": "8cd4cf563399773096373dfccc1916d2ce4235963cd78541648bab5d8bf1a998",
+        "members": {
+          "repliqa/answerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000050",
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000298"
+          ]
+        }
+      },
+      {
+        "match_sha256": "976358368ef7b42f6d0ebde33b751b7ee54eebf2dc76e849eafca23ddb39e641",
+        "members": {
+          "repliqa/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000064",
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000196"
+          ]
+        }
+      },
+      {
+        "match_sha256": "41fe01bb961bba1a73d22eece2a88cec1bca8dbfc4293a5f9f74414a2ea2ab39",
+        "members": {
+          "repliqa/answerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000265"
+          ],
+          "repliqa/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000266"
+          ]
+        }
+      },
+      {
+        "match_sha256": "769bd520f59445f0016325f239c297c0cc5a5aa50e4134b502f36695d80f429f",
+        "members": {
+          "repliqa/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000071",
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000295"
+          ]
+        }
+      },
+      {
+        "match_sha256": "fe61667325df42281553bfe970d1f9550310eefc61b1bd90caa268b47d9e337f",
+        "members": {
+          "repliqa/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000078",
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000236"
+          ]
+        }
+      },
+      {
+        "match_sha256": "41a5a61335067c5a43b7bb6f675fd23321b1cccbb51c15c7b7f551faedfecc0f",
+        "members": {
+          "repliqa/answerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000074"
+          ],
+          "repliqa/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000337"
+          ]
+        }
+      },
+      {
+        "match_sha256": "2ec30e23c68c516882daf13f153eff1bee4a52d7c741fec1f7e2972f11ec5d3d",
+        "members": {
+          "squad/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:squad:val:unanswerable:000003",
+            "lavi2026:9ea9afbd2aa0:squad:val:unanswerable:000374"
+          ]
+        }
+      },
+      {
+        "match_sha256": "10499357f93cca665f32decf8ec64cfaea50ab6da33826d66bcee3cc99babd64",
+        "members": {
+          "repliqa/answerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000113",
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000332"
+          ]
+        }
+      },
+      {
+        "match_sha256": "1d877fcc923d9a735625309ac2644e32320831eeddbec08e2c65bdd7ffa7d05e",
+        "members": {
+          "repliqa/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000108",
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000211"
+          ]
+        }
+      },
+      {
+        "match_sha256": "07593e00e83b17df207bf02fb3088dfd3be8eea688ae807caf0451b8fa1c2f87",
+        "members": {
+          "repliqa/answerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000102"
+          ],
+          "repliqa/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000058"
+          ]
+        }
+      },
+      {
+        "match_sha256": "7911088bebc68312218f71c6f102ad7039c58c5ca711d76f70ba06ac264d3d1b",
+        "members": {
+          "repliqa/answerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000263"
+          ],
+          "repliqa/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000270"
+          ]
+        }
+      },
+      {
+        "match_sha256": "2c3c17dd3675a22e3b5c345668fc56615c8b8871fdb6cac801c405a834d90888",
+        "members": {
+          "repliqa/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000152",
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000345"
+          ]
+        }
+      },
+      {
+        "match_sha256": "30362f3625300bebe8c4d7c9cb4f5b160336d77334bd293c88a79e1a114f2032",
+        "members": {
+          "repliqa/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000080",
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000118"
+          ]
+        }
+      },
+      {
+        "match_sha256": "7df8dc573f196e288d0860b82f05e974d576832f4d0e308f3e41e7c4bded34bb",
+        "members": {
+          "repliqa/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000186",
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000325"
+          ]
+        }
+      },
+      {
+        "match_sha256": "b074862ea71ca76721db68484979edc15a037db67635428b39e18dd8cb17ac97",
+        "members": {
+          "repliqa/answerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000165",
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000231"
+          ]
+        }
+      },
+      {
+        "match_sha256": "43817846eb2b81a0c6eac80221dd19da73d06ecf32539294643b184854b0ded8",
+        "members": {
+          "repliqa/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000284",
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000360"
+          ]
+        }
+      },
+      {
+        "match_sha256": "5ac7517fb293ee05e612956644ff7209016b7f6d7c80f52c8ade2276c955cc95",
+        "members": {
+          "repliqa/answerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000188",
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000297"
+          ],
+          "repliqa/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000311"
+          ]
+        }
+      },
+      {
+        "match_sha256": "cd83320d81cb47c360b4ecbc724631a3f947b2a123333dee8eb099890d97fed7",
+        "members": {
+          "repliqa/answerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000049"
+          ],
+          "repliqa/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000091"
+          ]
+        }
+      },
+      {
+        "match_sha256": "b0f59de96084e16df8a9459123bc4759ff219e95cf029ad14a19e98509999b6a",
+        "members": {
+          "repliqa/answerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000311"
+          ],
+          "repliqa/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000075"
+          ]
+        }
+      },
+      {
+        "match_sha256": "24de92c82c1dc8e1f6967d007a56c5a49c2e118cb4abcb49a337615d471f5551",
+        "members": {
+          "squad/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:squad:val:unanswerable:000278",
+            "lavi2026:9ea9afbd2aa0:squad:val:unanswerable:000377"
+          ]
+        }
+      },
+      {
+        "match_sha256": "37a84f83f73c4b2a26c7ea4e57ec6b18ea16a7b0027a5541542b4be72b996659",
+        "members": {
+          "repliqa/answerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000285"
+          ],
+          "repliqa/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000368"
+          ]
+        }
+      },
+      {
+        "match_sha256": "95b5f4387a9f8ea8ffcff16e9650f99794b3f379a5155dfe243a3c051d4220ce",
+        "members": {
+          "repliqa/answerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000397"
+          ],
+          "repliqa/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000321"
+          ]
+        }
+      },
+      {
+        "match_sha256": "5cbdb1ec0ffa19f0ce492abed2fae9a571fcbee7617ac95a9b6323b10ef994af",
+        "members": {
+          "repliqa/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000227",
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000228"
+          ]
+        }
+      },
+      {
+        "match_sha256": "b1c83588bc1301126eea2b92876dace7196fb3c1a83950e8acc2891851402257",
+        "members": {
+          "repliqa/answerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000177",
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000337"
+          ]
+        }
+      },
+      {
+        "match_sha256": "436186911233936e516078e77a507307a24af082524e3717b390241a979ff96e",
+        "members": {
+          "repliqa/answerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000131"
+          ],
+          "repliqa/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000382"
+          ]
+        }
+      },
+      {
+        "match_sha256": "8a526acabcd4126aeb7b123cd53f01168df85d2994da294c6d6f1ca86b4f0e82",
+        "members": {
+          "repliqa/answerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000002",
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000218"
+          ]
+        }
+      },
+      {
+        "match_sha256": "fcd13f0f2c04bde2df1f65614d5c61845fe77d00ab4c2a4ca56d190d3a31bf59",
+        "members": {
+          "repliqa/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000225",
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000283"
+          ]
+        }
+      },
+      {
+        "match_sha256": "85a64642bc9333d54f6a6515aec389484f91cf6b0d716766620b04c4e82f1f72",
+        "members": {
+          "repliqa/answerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000047",
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000391"
+          ]
+        }
+      },
+      {
+        "match_sha256": "a1b5c4c6c3eaf014e43d79fe85c34068399652ab7faabdf3d4b94afcf4d2f5b7",
+        "members": {
+          "repliqa/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000009",
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000381"
+          ]
+        }
+      },
+      {
+        "match_sha256": "7b8af682a201c23e3146ef4c94d8484985161b247d836084234a4f1e7bc610c8",
+        "members": {
+          "repliqa/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000085",
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000279"
+          ]
+        }
+      },
+      {
+        "match_sha256": "2854b3742a13e20052c7dc44bdfb6b137a13dae3f5337815762d3b13584495df",
+        "members": {
+          "repliqa/answerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000094"
+          ],
+          "repliqa/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000103"
+          ]
+        }
+      },
+      {
+        "match_sha256": "e7cfe296c79644ee6a9d618809b5548ac4a5b1cab5041ff47327669ed7184c1c",
+        "members": {
+          "squad/answerable_val": [
+            "lavi2026:9ea9afbd2aa0:squad:val:answerable:000123"
+          ],
+          "squad/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:squad:val:unanswerable:000334"
+          ]
+        }
+      },
+      {
+        "match_sha256": "bd070b7fd466af8cf82ed9e23c3e7140dcc9db53f11b671e3695cf671f802a71",
+        "members": {
+          "repliqa/answerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000112",
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000366"
+          ]
+        }
+      },
+      {
+        "match_sha256": "94415a7a12c9d2ee53cfa7a3ee02a39607c6ddfc952f5753cc8c7aaebbf997d1",
+        "members": {
+          "repliqa/answerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000006"
+          ],
+          "repliqa/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000322"
+          ]
+        }
+      },
+      {
+        "match_sha256": "7876bf951cfa104a73db470d15da53543e8674f080547c3e7965a8baf6394eb7",
+        "members": {
+          "squad/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:squad:val:unanswerable:000150",
+            "lavi2026:9ea9afbd2aa0:squad:val:unanswerable:000174"
+          ]
+        }
+      },
+      {
+        "match_sha256": "4023e94d24f45b5123be78d47d42eab513c7bcb74a885a836ec588523e6c216a",
+        "members": {
+          "squad/answerable_val": [
+            "lavi2026:9ea9afbd2aa0:squad:val:answerable:000364"
+          ],
+          "squad/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:squad:val:unanswerable:000043"
+          ]
+        }
+      },
+      {
+        "match_sha256": "5be7645208cefc97e72686b8cf70a03d82fa214784e26b84fb4d97862d337203",
+        "members": {
+          "squad/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:squad:val:unanswerable:000194",
+            "lavi2026:9ea9afbd2aa0:squad:val:unanswerable:000274"
+          ]
+        }
+      },
+      {
+        "match_sha256": "40403e22b81881160003db979db14aec8a5440505d67eb81ec3611e49a1db098",
+        "members": {
+          "repliqa/answerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000167"
+          ],
+          "repliqa/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000155"
+          ]
+        }
+      },
+      {
+        "match_sha256": "2a26fbe62a143a4a52a545e17b9e0fa3220d0ec516900daf04fc7ff18e9570f9",
+        "members": {
+          "squad/answerable_val": [
+            "lavi2026:9ea9afbd2aa0:squad:val:answerable:000279"
+          ],
+          "squad/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:squad:val:unanswerable:000008"
+          ]
+        }
+      },
+      {
+        "match_sha256": "e56d2fc49ee82cdf19e90b7f2fa08b49f5e48bb652309ca7c06495913eeb938a",
+        "members": {
+          "squad/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:squad:val:unanswerable:000137",
+            "lavi2026:9ea9afbd2aa0:squad:val:unanswerable:000225"
+          ]
+        }
+      },
+      {
+        "match_sha256": "867bd0714bfd1bb37d3ef74d451ad2d8e30b1f7e7d06db0181796344f23c3049",
+        "members": {
+          "squad/answerable_val": [
+            "lavi2026:9ea9afbd2aa0:squad:val:answerable:000337"
+          ],
+          "squad/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:squad:val:unanswerable:000152"
+          ]
+        }
+      },
+      {
+        "match_sha256": "b2bb98b2312ae4d82c2efdbb62b2169b32d9fac28735b53517713d1ea95524a2",
+        "members": {
+          "repliqa/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000047",
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000135"
+          ]
+        }
+      },
+      {
+        "match_sha256": "53d0870a66b82e13be142152a8eac93dad91b1e7fc624b677d3ca9a711e1c183",
+        "members": {
+          "squad/answerable_val": [
+            "lavi2026:9ea9afbd2aa0:squad:val:answerable:000246"
+          ],
+          "squad/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:squad:val:unanswerable:000241"
+          ]
+        }
+      },
+      {
+        "match_sha256": "ca48a1ef08b184d104f9c37d399d51465b83f0a8fe078a505d95f1a193103491",
+        "members": {
+          "repliqa/answerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000370"
+          ],
+          "repliqa/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000095"
+          ]
+        }
+      },
+      {
+        "match_sha256": "9d5c6417ff67fa752dd49af81798ab0e837634b9d503359b35d5f75ff2232c7c",
+        "members": {
+          "repliqa/answerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000341"
+          ],
+          "repliqa/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000355"
+          ]
+        }
+      },
+      {
+        "match_sha256": "92b35f927292244ea2f7a0968d07a232507092da13fe8c42d63888a604454726",
+        "members": {
+          "repliqa/answerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000278",
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000359"
+          ]
+        }
+      },
+      {
+        "match_sha256": "a2189073511977c0bcfd0ece5ad285a98b1e3eae17ec4981498f2d09485637b7",
+        "members": {
+          "repliqa/answerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000151"
+          ],
+          "repliqa/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000035",
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000195"
+          ]
+        }
+      },
+      {
+        "match_sha256": "cedf5474f690ea75043458e6a7aa6434b63424562d35b571eb980a1efa4bbf0f",
+        "members": {
+          "repliqa/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000023",
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000313"
+          ]
+        }
+      },
+      {
+        "match_sha256": "d16862e67d44020b28bfcb8d68b9574571226235b78d239a08331fb130a11322",
+        "members": {
+          "repliqa/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000065",
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000315"
+          ]
+        }
+      },
+      {
+        "match_sha256": "cb72c30515871c4bae0796725340e2ffb098a3e1a0655b9b0364abe68e4ce1a0",
+        "members": {
+          "repliqa/answerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000035"
+          ],
+          "repliqa/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000181"
+          ]
+        }
+      },
+      {
+        "match_sha256": "536eca6810f5a75c477209d6c57f94e9a1f14b4870918667400088052415e6ea",
+        "members": {
+          "repliqa/answerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000004",
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000357"
+          ]
+        }
+      },
+      {
+        "match_sha256": "9dd934aa797e1980b61391cc9b92854f6da40c8e698f16de460f7931d404a376",
+        "members": {
+          "repliqa/answerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000133"
+          ],
+          "repliqa/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000183"
+          ]
+        }
+      },
+      {
+        "match_sha256": "1ddafee57ae5162c56727be474fde99b0bfc0e211809600739085b7d3fc9013a",
+        "members": {
+          "repliqa/answerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000198"
+          ],
+          "repliqa/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000246"
+          ]
+        }
+      },
+      {
+        "match_sha256": "3028b3c9dcab0a1b43399927fe776c4dc207ebe2383413e86a38d630ebba7d2f",
+        "members": {
+          "repliqa/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000115",
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000290"
+          ]
+        }
+      },
+      {
+        "match_sha256": "749a4302bddb62874ed3e3b5b8afec5cc150d823e7d86a012500c719732e3c18",
+        "members": {
+          "repliqa/answerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000149",
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000234"
+          ]
+        }
+      },
+      {
+        "match_sha256": "b653e0f182f740c8e4c25561a7ef0b0fcef2fff4d88c6a0a17685dd8e31ceda9",
+        "members": {
+          "squad/answerable_val": [
+            "lavi2026:9ea9afbd2aa0:squad:val:answerable:000089",
+            "lavi2026:9ea9afbd2aa0:squad:val:answerable:000207"
+          ]
+        }
+      },
+      {
+        "match_sha256": "4d4ab6be4a7f649b02d41375425498e4e8b376178cb1b4c4dcbf004f49897508",
+        "members": {
+          "repliqa/answerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000101"
+          ],
+          "repliqa/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000249"
+          ]
+        }
+      },
+      {
+        "match_sha256": "564a7b2b683fa6dac2242381d5d1b2dfae63632a6c4bc8a448e1176f96be2a8d",
+        "members": {
+          "repliqa/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000031",
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000132"
+          ]
+        }
+      },
+      {
+        "match_sha256": "615859146fb3b74d7475493c3debae243c932062b857cd62846a834cb78bd13f",
+        "members": {
+          "repliqa/answerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000290"
+          ],
+          "repliqa/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000323"
+          ]
+        }
+      },
+      {
+        "match_sha256": "d9edcca3ba8196f02410ea3bd2c90e44c957dba64004e14a9da58acdf8c660d1",
+        "members": {
+          "repliqa/answerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000053",
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000245"
+          ]
+        }
+      },
+      {
+        "match_sha256": "c869703134386cd7faa64309789921a6c3526dd7be9c6ed4a88fe48cff79b979",
+        "members": {
+          "repliqa/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000248",
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000309"
+          ]
+        }
+      },
+      {
+        "match_sha256": "55724290d9e92fb603fb7f18504e98719634c7a8f43c215ff26e21a67734f8a8",
+        "members": {
+          "repliqa/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000268",
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000363"
+          ]
+        }
+      },
+      {
+        "match_sha256": "968afb0fb9a4d2b2f98f798c1c11d8b8bfc123f8ba79c9edcbd36c1ee356d680",
+        "members": {
+          "repliqa/answerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000194"
+          ],
+          "repliqa/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000275"
+          ]
+        }
+      },
+      {
+        "match_sha256": "b35ddf5eef0388fd95e5454fb9dbe51f53071453f5b171788824a11fa659920f",
+        "members": {
+          "repliqa/answerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000387"
+          ],
+          "repliqa/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000004"
+          ]
+        }
+      },
+      {
+        "match_sha256": "ea9f03821fe6371999ac9f15d7c9492a671f8eea14a4b486dd5ad7c0baa6e902",
+        "members": {
+          "repliqa/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000056",
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000197"
+          ]
+        }
+      },
+      {
+        "match_sha256": "cb0bdd5af3ff4a21d7eda94da12dffaf93ffcb53a841d82825e26bcbe9298985",
+        "members": {
+          "repliqa/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000282",
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000379"
+          ]
+        }
+      },
+      {
+        "match_sha256": "bca4dd7343648292523c5f8049411b5cc5664f8029731852cdb7395d12cad571",
+        "members": {
+          "repliqa/answerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000178"
+          ],
+          "repliqa/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000242"
+          ]
+        }
+      },
+      {
+        "match_sha256": "1896e986a7bb918b2a771e9b13a13e704ab98b3afe4643134bfbe9aca76b054e",
+        "members": {
+          "squad/answerable_val": [
+            "lavi2026:9ea9afbd2aa0:squad:val:answerable:000343"
+          ],
+          "squad/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:squad:val:unanswerable:000100"
+          ]
+        }
+      },
+      {
+        "match_sha256": "bfe686e3d59483c818d34752e4da7431e81323fddd1e6904fa9dac3c8c1d9373",
+        "members": {
+          "repliqa/answerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000279"
+          ],
+          "repliqa/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000019"
+          ]
+        }
+      },
+      {
+        "match_sha256": "aaea30c42f4080eff3547e459033d0bff6eb9c34f99eebc105f39b5c8944d75c",
+        "members": {
+          "repliqa/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000055",
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000113"
+          ]
+        }
+      },
+      {
+        "match_sha256": "c9a138e54e527a0f142190d866b065ca86c651d4ff2c43c1b84e24031507e93f",
+        "members": {
+          "repliqa/answerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000250",
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000344"
+          ]
+        }
+      },
+      {
+        "match_sha256": "156a61c106f034c1e2bcf23e23a5beb5bcbba654d9cfdb9532c0c31c30fd245a",
+        "members": {
+          "squad/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:squad:val:unanswerable:000184",
+            "lavi2026:9ea9afbd2aa0:squad:val:unanswerable:000279"
+          ]
+        }
+      },
+      {
+        "match_sha256": "2bb47283b091686a1dce95a4585b2059e3cf09fbfc37922b70843c5064a33147",
+        "members": {
+          "repliqa/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000066",
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000131"
+          ]
+        }
+      },
+      {
+        "match_sha256": "9414fc4589d42cf8751c0e3c4bf815a5915bfefcbf9061b92439d60a56632d33",
+        "members": {
+          "repliqa/answerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000312"
+          ],
+          "repliqa/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000121"
+          ]
+        }
+      },
+      {
+        "match_sha256": "197a5f1c6dac4ff53f7da5f1affa6425831bbd2464e77bf6ea0e46673d3dee55",
+        "members": {
+          "repliqa/answerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000168",
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000264"
+          ]
+        }
+      },
+      {
+        "match_sha256": "61c126cfc19d87275a5f1a8f7d2fab5cb18b1a5589586d46799afc342365ff4e",
+        "members": {
+          "repliqa/answerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000134"
+          ],
+          "repliqa/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000231"
+          ]
+        }
+      },
+      {
+        "match_sha256": "92b8dbe5d53ac431cb46fee6777b365d12bf6b778a32be0a2047aa4e8f3a99f3",
+        "members": {
+          "repliqa/answerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000280"
+          ],
+          "repliqa/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000005"
+          ]
+        }
+      },
+      {
+        "match_sha256": "7b2a56954b344e7049396e5f98354a0da14dcb68c31218fe6bd3c0683c2cc427",
+        "members": {
+          "squad/answerable_val": [
+            "lavi2026:9ea9afbd2aa0:squad:val:answerable:000144",
+            "lavi2026:9ea9afbd2aa0:squad:val:answerable:000197"
+          ]
+        }
+      },
+      {
+        "match_sha256": "e00ecabf6eeff8a50af9866bab10e8bab4d4f964dcf16c353e0c6f23046ffcd9",
+        "members": {
+          "squad/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:squad:val:unanswerable:000212",
+            "lavi2026:9ea9afbd2aa0:squad:val:unanswerable:000301"
+          ]
+        }
+      },
+      {
+        "match_sha256": "c8c01a57c08eed6842c43aa14726f19bdfd61b2207b8c8498535f556f315bc88",
+        "members": {
+          "repliqa/answerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:answerable:000092"
+          ],
+          "repliqa/unanswerable_val": [
+            "lavi2026:9ea9afbd2aa0:repliqa:val:unanswerable:000394"
+          ]
+        }
+      }
+    ],
+    "within": {
+      "repliqa/answerable_val": {
+        "extra_records": 17,
+        "groups": 17,
+        "records": 34
+      },
+      "repliqa/unanswerable_val": {
+        "extra_records": 29,
+        "groups": 28,
+        "records": 57
+      },
+      "squad/answerable_val": {
+        "extra_records": 2,
+        "groups": 2,
+        "records": 4
+      },
+      "squad/unanswerable_val": {
+        "extra_records": 8,
+        "groups": 8,
+        "records": 16
+      }
+    }
+  },
+  "normalized_context_question": {
+    "across": [],
+    "groups": [],
+    "within": {}
+  },
+  "scope": "Four published val label partitions plus existing curated_v4 dev/test; no authors train/val2/test inspected"
+}

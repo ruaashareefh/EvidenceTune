@@ -1,0 +1,103 @@
+{
+  "adapter_policy": "lavi-abstain-aware-val-v1",
+  "datasets": {
+    "repliqa": {
+      "categories": {
+        "answerable": 400,
+        "unanswerable": 400
+      },
+      "count": 800,
+      "output": "repliqa_dev.jsonl",
+      "review_status": "source_labels_preserved_not_manually_audited",
+      "source_split": "val"
+    },
+    "squad": {
+      "categories": {
+        "answerable": 400,
+        "unanswerable": 400
+      },
+      "count": 800,
+      "output": "squad_dev.jsonl",
+      "review_status": "source_labels_preserved_not_manually_audited",
+      "source_split": "val"
+    }
+  },
+  "example_id_policy": "release SHA prefix + dataset + val + filename label + zero-based row index",
+  "existing_benchmark": {
+    "sha256": {
+      "squad_dev.jsonl": "a2b5fc8aa23cf6ca2738f482b993bf4c6626bed5f6adc5dd03461bfe4edb99b5",
+      "squad_manifest.json": "ef7e26c2612264f4c666898b8f9e60c50d2f147db252da2b78070616ab84c5b8",
+      "squad_test.jsonl": "0c6f9b3c89104fc79ffcc26efa506df7541044e586d43b8efca57b3f8ce56e5b"
+    },
+    "version": "curated_v4"
+  },
+  "format_version": 1,
+  "limitations": [
+    "No original row IDs, article IDs, or document IDs in released rows",
+    "Shared passages detectable; full document-level isolation cannot be certified",
+    "Authors train/val2/test splits not retrieved; cross-split isolation against them unverified",
+    "No deduplication, filtering, relabeling, or split reassignment performed"
+  ],
+  "ordering": "answerable_val source order followed by unanswerable_val source order, per dataset",
+  "output_sha256": {
+    "overlap_audit.json": "a984a4ba20961038eaf2a36403c9ed0417183b75d073af9ba184590069ed2ca1",
+    "repliqa_dev.jsonl": "1253b905ddf9d61eee9cae4245c53aab8de54abec4fae192273f9734ebcecc05",
+    "source_records.jsonl": "cf6a1ddff0a05982b6988dffaeaf74f6d4d5ba51a94b93cc38f1b7ce3da25499",
+    "squad_dev.jsonl": "1c450a27669d11f7b252b43794ffcd4ec143a189019e86ee95e4ce86d63feca0"
+  },
+  "paper": "https://aclanthology.org/2026.eacl-long.29/",
+  "reference_policy": "gt_answer preserved verbatim, including source unanswerable sentinel",
+  "source_files": {
+    "data/abstain_aware_prompt/repliqa/answerable_val.json": {
+      "bytes": 2843487,
+      "count": 400,
+      "field_sets": {
+        "category,gt_answer,instruction": 400
+      },
+      "git_blob_sha1": "6b17140974cec507113e5e2f3cda1981926b194d",
+      "label_partition": "answerable",
+      "published_split": "val",
+      "sha256": "62a6a8fde99fe5055f54ae00d22e032807280c4b67150816ac3e8dc31e2121a9",
+      "url": "https://raw.githubusercontent.com/MaorLavi/unanswerability-directions/9ea9afbd2aa02052c7b3ee4995aa5f26e9b6cd2f/data/abstain_aware_prompt/repliqa/answerable_val.json"
+    },
+    "data/abstain_aware_prompt/repliqa/unanswerable_val.json": {
+      "bytes": 2836841,
+      "count": 400,
+      "field_sets": {
+        "category,gt_answer,instruction": 400
+      },
+      "git_blob_sha1": "b43e8f92a82cabfa4eac5f61521376af4fa7abab",
+      "label_partition": "unanswerable",
+      "published_split": "val",
+      "sha256": "d5066d233747513de7a4483d74c9cb6ab79a83c12f76757c311996b71e5b2408",
+      "url": "https://raw.githubusercontent.com/MaorLavi/unanswerability-directions/9ea9afbd2aa02052c7b3ee4995aa5f26e9b6cd2f/data/abstain_aware_prompt/repliqa/unanswerable_val.json"
+    },
+    "data/abstain_aware_prompt/squad/answerable_val.json": {
+      "bytes": 478574,
+      "count": 400,
+      "field_sets": {
+        "category,gt_answer,instruction": 400
+      },
+      "git_blob_sha1": "c2a715b08795aaba98537ba5f180c11e0bc63bda",
+      "label_partition": "answerable",
+      "published_split": "val",
+      "sha256": "ca46680de3cfd54a0d8aac849a0ef6de9b29c6cecae4304b56660562f823ec5f",
+      "url": "https://raw.githubusercontent.com/MaorLavi/unanswerability-directions/9ea9afbd2aa02052c7b3ee4995aa5f26e9b6cd2f/data/abstain_aware_prompt/squad/answerable_val.json"
+    },
+    "data/abstain_aware_prompt/squad/unanswerable_val.json": {
+      "bytes": 476917,
+      "count": 400,
+      "field_sets": {
+        "category,gt_answer,instruction": 400
+      },
+      "git_blob_sha1": "66bf609f195bafc04b293b16ac96afc4cc972556",
+      "label_partition": "unanswerable",
+      "published_split": "val",
+      "sha256": "99365058dcbb202639208f73480e813c981158d3180192c4510be70f7371d6bd",
+      "url": "https://raw.githubusercontent.com/MaorLavi/unanswerability-directions/9ea9afbd2aa02052c7b3ee4995aa5f26e9b6cd2f/data/abstain_aware_prompt/squad/unanswerable_val.json"
+    }
+  },
+  "source_id_policy": "SHA256 of exact extracted passage, not an article/document identifier",
+  "source_repository": "https://github.com/MaorLavi/unanswerability-directions",
+  "source_revision": "9ea9afbd2aa02052c7b3ee4995aa5f26e9b6cd2f"
+}
